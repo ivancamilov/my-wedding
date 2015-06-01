@@ -1,0 +1,49 @@
+.intro {
+  .title {
+    font-family: $font-script;
+    font-size: 10rem;
+    font-weight: normal;
+    margin: 4rem auto 0;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-family: $font-sans-light;
+    font-size: 3rem;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:before {
+      background: black;
+      content: '';
+      display: block;
+      height: 0.25rem;
+      margin: 0 auto 2rem;
+      width: 5rem;
+    }
+
+    &:after {
+      background: $yellow;
+      content: '';
+      display: block;
+      height: 0.35rem;
+      margin: 0.5rem auto 0;
+      width: 20rem;
+    }
+  }
+
+  .wedding-date {
+    display: block;
+    font-family: $font-sans;
+    font-size: 3.25rem;
+    text-align: center;
+  }
+
+  .intro-text {
+    display: block;
+    font-family: $font-sans-light;
+    font-size: 1.35rem;
+    text-align: center;
+  }
+}

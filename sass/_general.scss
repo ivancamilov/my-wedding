@@ -1,0 +1,35 @@
+.main {
+  section {
+    height: 100vh;
+    position: relative;
+
+    // TEMP: Just for dev sake
+    &:nth-child(even) {
+      background: #DDD;
+    }
+
+    .sides {
+      @include outer-container;
+      position: relative;
+    }
+
+    .bride, .groom {
+      @include span-columns(6);
+    }
+
+    .story-title {
+      font-family: $font-sans-bold;
+      font-size: 1.25rem;
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .story-text {
+      font-family: $font-sans;
+      font-size: 1.25rem;
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
