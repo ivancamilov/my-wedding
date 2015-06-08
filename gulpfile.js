@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
@@ -13,12 +14,16 @@ gulp.task('serve', function() {
 
 gulp.task('sass', function() {
   return gulp.src('sass/*.scss')
-      .pipe(sass({
-        sourcemap: true,
-        includePaths: require('node-neat').includePaths
-      }))
-      .pipe(gulp.dest('css'))
-      .pipe(reload({stream:true}));
+  .pipe(sass({
+    sourcemap: true,
+    includePaths: require('node-neat').includePaths
+  }))
+  .pipe(autoprefixer({
+    browsers: ['last 2 versions'],
+    cascade: false
+  }))
+  .pipe(gulp.dest('css'))
+  .pipe(reload({stream:true}));
 });
 
 gulp.task('reload', function() {
