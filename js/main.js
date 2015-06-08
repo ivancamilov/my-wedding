@@ -31,6 +31,8 @@ function update() {
 // Initialize the code that evaluates wether we should
 // show the menu bar or not.
 window.addEventListener('scroll', onScroll, false);
+// also, we make sure the page loads the menu properly when reloaded
+update();
 
-// Make sure we scroll smoothly
+// Make sure we scroll smoothly when going to an anchor
 smoothScroll.init();
