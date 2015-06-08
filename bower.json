@@ -1,0 +1,22 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ivancamilov/my-wedding",
+  "authors": [
+    "Ivan Vasquez <ivancamilov@gmail.com>"
+  ],
+  "description": "The website for my wedding",
+  "main": "main.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#~5.3.7"
+  }
+}
