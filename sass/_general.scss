@@ -7,7 +7,6 @@ body {
 
 .main {
   section {
-    min-height: 100vh;
     position: relative;
     overflow: hidden;
 
@@ -19,11 +18,22 @@ body {
     .sides {
       @include outer-container;
       position: relative;
+      text-align: center;
+      padding: 7rem 1rem;
     }
 
     .bride, .groom {
       @include span-columns(6);
       padding: 1rem;
+    }
+
+    .bride {
+      width: 40%;
+      margin-right: 20%;
+    }
+
+    .groom {
+      width: 40%;
     }
 
     .story-title {

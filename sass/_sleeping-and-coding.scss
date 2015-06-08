@@ -1,23 +1,7 @@
 #sleeping-and-coding {
-  .sides {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-
-    .bride {
-      width: 40%;
-      margin-right: 20%;
-
-      .picture {
-        margin: 4rem 0 0;
-      }
-    }
-
-    .groom {
-      width: 40%;
+  .bride {
+    .picture {
+      margin: 4rem 0 0;
     }
   }
 
@@ -28,6 +12,7 @@
     height: 100%;
     left: 50%;
     position: absolute;
+    top: 0;
     width: 50%;
     z-index: -1;
   }

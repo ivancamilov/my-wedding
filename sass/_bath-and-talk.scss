@@ -1,35 +1,21 @@
 #bath-and-talk {
-  .sides {
-    left: 50%;
-    position: absolute;
-    top: 30%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-
-    .bride {
-      width: 40%;
-      margin-right: 20%;
-
-      .picture {
-        margin: 1rem 0 0;
-      }
-
-      .story-title {
-        margin: 0.75rem 0 0;
-      }
+  .bride {
+    .picture {
+      margin: 1rem 0 0;
     }
 
-    .groom {
-      width: 40%;
+    .story-title {
+      margin: 0.75rem 0 0;
+    }
+  }
 
-      .picture {
-        margin: 6rem 0 0;
-      }
+  .groom {
+    .picture {
+      margin: 6rem 0 0;
+    }
 
-      .story-title {
-        margin: 2rem 0 0;
-      }
+    .story-title {
+      margin: 2rem 0 0;
     }
   }
 }

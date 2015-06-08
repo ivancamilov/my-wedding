@@ -1,27 +1,13 @@
 #mirrors {
-  .sides {
-    left: 50%;
-    position: absolute;
-    top: 30%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-
-    .bride {
-      width: 40%;
-      margin-right: 20%;
-
-      .picture {
-        margin: 1rem 0;
-      }
+  .bride {
+    .picture {
+      margin: 1rem 0;
     }
+  }
 
-    .groom {
-      width: 40%;
-
-      .picture {
-        margin: 3rem 0 3.5rem;
-      }
+  .groom {
+    .picture {
+      margin: 3rem 0 3.5rem;
     }
   }
 }

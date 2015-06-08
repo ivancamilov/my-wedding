@@ -152,14 +152,15 @@ body {
   background-size: contain; }
 
 .main section {
-  min-height: 100vh;
   position: relative;
   overflow: hidden; }
   .main section .sides {
     max-width: 68em;
     margin-left: auto;
     margin-right: auto;
-    position: relative; }
+    position: relative;
+    text-align: center;
+    padding: 7rem 1rem; }
     .main section .sides::after {
       clear: both;
       content: "";
@@ -172,6 +173,11 @@ body {
     padding: 1rem; }
     .main section .bride:last-child, .main section .groom:last-child {
       margin-right: 0; }
+  .main section .bride {
+    width: 40%;
+    margin-right: 20%; }
+  .main section .groom {
+    width: 40%; }
   .main section .story-title {
     font-family: "josefin_sansbold", serif;
     font-size: 1.5rem;
@@ -201,7 +207,8 @@ body {
       text-decoration: underline; }
 
 #intro {
-  background: url(/img/uniform-bg.jpg); }
+  background: url(/img/uniform-bg.jpg);
+  min-height: 100vh; }
   #intro:after {
     background: url(/img/edge.svg);
     background-position: top;
@@ -260,7 +267,8 @@ body {
     width: 42.5%; }
 
 #story-begins {
-  background: url(/img/uniform-bg.jpg); }
+  background: url(/img/uniform-bg.jpg);
+  min-height: 100vh; }
   #story-begins:before {
     background: url(/img/edge.svg);
     background-position: bottom;
@@ -306,111 +314,42 @@ body {
 #we-meet {
   background: url(/img/ceet.png);
   background-position: center;
-  background-repeat: no-repeat; }
-  #we-meet .sides {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center; }
-    #we-meet .sides .bride {
-      width: 40%;
-      margin-right: 10%; }
-      #we-meet .sides .bride .picture {
-        margin-top: 1rem; }
-    #we-meet .sides .groom {
-      width: 50%; }
-      #we-meet .sides .groom .picture {
-        margin-top: 4rem; }
+  background-repeat: no-repeat;
+  padding-top: 10rem; }
+  #we-meet .sides .bride {
+    margin-right: 10%; }
+    #we-meet .sides .bride .picture {
+      margin-top: 1rem; }
+  #we-meet .sides .groom {
+    width: 50%; }
+    #we-meet .sides .groom .picture {
+      margin-top: 4rem; }
 
-#family .sides {
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center; }
-  #family .sides .bride {
-    width: 40%;
-    margin-right: 20%; }
-  #family .sides .groom {
-    width: 40%; }
-    #family .sides .groom .picture {
-      margin: 3rem 0 1rem; }
+#family .groom {
+  width: 40%; }
+  #family .groom .picture {
+    margin: 3rem 0 1rem; }
 
 #music {
   background: url(/img/yellow-submarine.png);
-  background-size: contain; }
-  #music .sides {
-    left: 50%;
-    position: absolute;
-    top: 80%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center; }
-    #music .sides .bride {
-      width: 40%;
-      margin-right: 20%; }
-    #music .sides .groom {
-      width: 40%; }
-      #music .sides .groom .story-text {
-        margin: 4rem 0 0; }
+  background-size: cover; }
+  #music .groom .story-text {
+    margin: 4rem 0 0; }
 
-#feathers-and-smiles .sides {
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center; }
-  #feathers-and-smiles .sides .bride {
-    width: 40%;
-    margin-right: 20%; }
-    #feathers-and-smiles .sides .bride .picture {
-      margin: 1rem 0 0; }
-  #feathers-and-smiles .sides .groom {
-    width: 40%; }
-    #feathers-and-smiles .sides .groom .picture {
-      margin: 3rem 0 0; }
+#feathers-and-smiles .bride .picture {
+  margin: 1rem 0 0; }
 
-#jackets-and-wings .sides {
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center; }
-  #jackets-and-wings .sides .bride {
-    width: 40%;
-    margin-right: 20%; }
-    #jackets-and-wings .sides .bride .picture {
-      margin: 1rem 0 0; }
-  #jackets-and-wings .sides .groom {
-    width: 40%; }
-    #jackets-and-wings .sides .groom .picture {
-      margin: 3rem 0 0; }
+#feathers-and-smiles .groom .picture {
+  margin: 3rem 0 0; }
 
-#sleeping-and-coding .sides {
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center; }
-  #sleeping-and-coding .sides .bride {
-    width: 40%;
-    margin-right: 20%; }
-    #sleeping-and-coding .sides .bride .picture {
-      margin: 4rem 0 0; }
-  #sleeping-and-coding .sides .groom {
-    width: 40%; }
+#jackets-and-wings .bride .picture {
+  margin: 1rem 0 0; }
+
+#jackets-and-wings .groom .picture {
+  margin: 3rem 0 0; }
+
+#sleeping-and-coding .bride .picture {
+  margin: 4rem 0 0; }
 
 #sleeping-and-coding:after {
   background: url(/img/code-flies.png);
@@ -419,115 +358,81 @@ body {
   height: 100%;
   left: 50%;
   position: absolute;
+  top: 0;
   width: 50%;
   z-index: -1; }
 
-#bath-and-talk .sides {
-  left: 50%;
-  position: absolute;
-  top: 30%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center; }
-  #bath-and-talk .sides .bride {
-    width: 40%;
-    margin-right: 20%; }
-    #bath-and-talk .sides .bride .picture {
-      margin: 1rem 0 0; }
-    #bath-and-talk .sides .bride .story-title {
-      margin: 0.75rem 0 0; }
-  #bath-and-talk .sides .groom {
-    width: 40%; }
-    #bath-and-talk .sides .groom .picture {
-      margin: 6rem 0 0; }
-    #bath-and-talk .sides .groom .story-title {
-      margin: 2rem 0 0; }
+#bath-and-talk .bride .picture {
+  margin: 1rem 0 0; }
 
-#singing-and-squash .sides {
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center; }
-  #singing-and-squash .sides .bride {
-    width: 40%;
-    margin-right: 20%; }
-  #singing-and-squash .sides .groom {
-    width: 40%; }
-    #singing-and-squash .sides .groom .picture {
-      margin: 4rem 0 0; }
-    #singing-and-squash .sides .groom .story-text {
-      margin: 3rem 0 0; }
+#bath-and-talk .bride .story-title {
+  margin: 0.75rem 0 0; }
 
-#mirrors .sides {
-  left: 50%;
-  position: absolute;
-  top: 30%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center; }
-  #mirrors .sides .bride {
-    width: 40%;
-    margin-right: 20%; }
-    #mirrors .sides .bride .picture {
-      margin: 1rem 0; }
-  #mirrors .sides .groom {
-    width: 40%; }
-    #mirrors .sides .groom .picture {
-      margin: 3rem 0 3.5rem; }
+#bath-and-talk .groom .picture {
+  margin: 6rem 0 0; }
 
-#beers .content {
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
+#bath-and-talk .groom .story-title {
+  margin: 2rem 0 0; }
 
-#beers .picture {
-  display: block;
-  margin: 1rem auto; }
+#singing-and-squash .groom .picture {
+  margin: 4rem 0 0; }
 
-#story-ends .couple-names {
-  font-family: "josefin_sanslight", serif;
-  font-size: 3.5rem;
-  text-align: center;
-  text-transform: uppercase; }
-  #story-ends .couple-names:after {
-    background: black;
-    content: '';
+#singing-and-squash .groom .story-text {
+  margin: 3rem 0 0; }
+
+#mirrors .bride .picture {
+  margin: 1rem 0; }
+
+#mirrors .groom .picture {
+  margin: 3rem 0 3.5rem; }
+
+#beers {
+  min-height: 100vh; }
+  #beers .content {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  #beers .picture {
     display: block;
-    height: 0.25rem;
-    margin: 1rem auto;
-    width: 5rem; }
+    margin: 1rem auto; }
 
-#story-ends .now {
-  font-family: "josefin_sansbold", serif;
-  font-size: 1.75rem;
-  text-align: center;
-  text-transform: uppercase; }
-
-#story-ends .couple-nicknames {
-  font-family: "cheddar_jackregular", serif;
-  font-size: 11rem;
-  text-align: center; }
-  #story-ends .couple-nicknames:after {
-    background: #FCEE21;
-    content: '';
-    display: block;
-    height: 0.35rem;
-    margin: 0 auto 1rem;
-    width: 11rem; }
-
-#story-ends .story-text {
-  max-width: 30rem;
-  margin: 0 auto; }
-
-#story-ends .picture {
-  width: 100%; }
+#story-ends {
+  min-height: 100vh; }
+  #story-ends .couple-names {
+    font-family: "josefin_sanslight", serif;
+    font-size: 3.5rem;
+    text-align: center;
+    text-transform: uppercase; }
+    #story-ends .couple-names:after {
+      background: black;
+      content: '';
+      display: block;
+      height: 0.25rem;
+      margin: 1rem auto;
+      width: 5rem; }
+  #story-ends .now {
+    font-family: "josefin_sansbold", serif;
+    font-size: 1.75rem;
+    text-align: center;
+    text-transform: uppercase; }
+  #story-ends .couple-nicknames {
+    font-family: "cheddar_jackregular", serif;
+    font-size: 11rem;
+    text-align: center; }
+    #story-ends .couple-nicknames:after {
+      background: #FCEE21;
+      content: '';
+      display: block;
+      height: 0.35rem;
+      margin: 0 auto 1rem;
+      width: 11rem; }
+  #story-ends .story-text {
+    max-width: 30rem;
+    margin: 0 auto; }
+  #story-ends .picture {
+    width: 100%; }
 
 #the-wedding .title {
   font-family: "cheddar_jackregular", serif;
