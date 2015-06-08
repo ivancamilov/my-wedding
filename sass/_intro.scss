@@ -1,9 +1,9 @@
 #intro {
-  background: url(/img/uniform-bg.jpg);
+  background: url(../img/uniform-bg.jpg);
   min-height: 100vh;
 
   &:after {
-    background: url(/img/edge.svg);
+    background: url(../img/edge.svg);
     background-position: top;
     background-repeat-y: no-repeat;
     content: '';

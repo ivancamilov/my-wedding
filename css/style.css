@@ -146,7 +146,7 @@ ul {
       right: 0.5rem; }
 
 body {
-  background: url(/img/back.jpg);
+  background: url(../img/back.jpg);
   background-position: top center;
   background-repeat-x: no-repeat;
   background-size: contain; }
@@ -207,10 +207,10 @@ body {
       text-decoration: underline; }
 
 #intro {
-  background: url(/img/uniform-bg.jpg);
+  background: url(../img/uniform-bg.jpg);
   min-height: 100vh; }
   #intro:after {
-    background: url(/img/edge.svg);
+    background: url(../img/edge.svg);
     background-position: top;
     background-repeat-y: no-repeat;
     content: '';
@@ -267,10 +267,10 @@ body {
     width: 42.5%; }
 
 #story-begins {
-  background: url(/img/uniform-bg.jpg);
+  background: url(../img/uniform-bg.jpg);
   min-height: 100vh; }
   #story-begins:before {
-    background: url(/img/edge.svg);
+    background: url(../img/edge.svg);
     background-position: bottom;
     background-repeat: repeat-x;
     content: '';
@@ -282,7 +282,7 @@ body {
     transform: rotate(180deg);
     width: 100%; }
   #story-begins:after {
-    background: url(/img/edge.svg);
+    background: url(../img/edge.svg);
     background-position: bottom;
     background-repeat: repeat-x;
     content: '';
@@ -312,7 +312,7 @@ body {
       width: 15rem; }
 
 #we-meet {
-  background: url(/img/ceet.png);
+  background: url(../img/ceet.png);
   background-position: center;
   background-repeat: no-repeat;
   padding-top: 10rem; }
@@ -331,7 +331,7 @@ body {
     margin: 3rem 0 1rem; }
 
 #music {
-  background: url(/img/yellow-submarine.png);
+  background: url(../img/yellow-submarine.png);
   background-size: cover; }
   #music .groom .story-text {
     margin: 4rem 0 0; }
@@ -352,7 +352,7 @@ body {
   margin: 4rem 0 0; }
 
 #sleeping-and-coding:after {
-  background: url(/img/code-flies.png);
+  background: url(../img/code-flies.png);
   background-repeat: no-repeat;
   content: '';
   height: 100%;

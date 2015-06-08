@@ -1,9 +1,9 @@
 #story-begins {
-  background: url(/img/uniform-bg.jpg);
+  background: url(../img/uniform-bg.jpg);
   min-height: 100vh;
 
   &:before {
-    background: url(/img/edge.svg);
+    background: url(../img/edge.svg);
     background-position: bottom;
     background-repeat: repeat-x;
     content: '';
@@ -16,7 +16,7 @@
   }
 
   &:after {
-    background: url(/img/edge.svg);
+    background: url(../img/edge.svg);
     background-position: bottom;
     background-repeat: repeat-x;
     content: '';
