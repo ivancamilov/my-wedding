@@ -1,0 +1,86 @@
+#rsvp {
+  .title {
+    font-family: $font-script;
+    font-weight: normal;
+    font-size: 11rem;
+    margin: 0;
+    text-align: center;
+
+    &:after {
+      background: black;
+      content: '';
+      display: block;
+      height: 0.25rem;
+      margin: 0 auto;
+      width: 5rem;
+    }
+  }
+
+  .subtitle {
+    display: block;
+    font-family: $font-sans-light;
+    font-weight: normal;
+    font-size: 3.5rem;
+    line-height: 0.75;
+    margin: 3rem 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    .highlight {
+      display: block;
+      font-family: $font-sans;
+      font-size: 3rem;
+
+      &:before {
+        background: $yellow;
+        content: '';
+        display: block;
+        height: 0.35rem;
+        margin: 1rem auto;
+        width: 30rem;
+      }
+    }
+  }
+
+  #rsvp-form {
+    font-family: $font-sans-light;
+    font-size: 1.25rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    .full-name {
+      display: block;
+      margin: 10rem 0 0;
+
+      input {
+        display: block;
+        height: 2.25rem;
+        font-family: $font-sans-light;
+        font-size: 1.5rem;
+        margin: 0.5rem auto 1rem;
+        text-align: center;
+        width: 30rem;
+      }
+    }
+
+    .assistance {
+      display: inline-block;
+    }
+
+    .will-assist,
+    .wont-assist {
+      display: block;
+      float: left;
+      margin: 2rem;
+
+      input {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .button {
+      margin: 0 auto 10rem;
+    }
+  }
+}

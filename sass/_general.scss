@@ -1,12 +1,20 @@
+body {
+  background: url(/img/back.jpg);
+  background-position: top center;
+  background-repeat-x: no-repeat;
+  background-size: contain;
+}
+
 .main {
   section {
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
+    overflow: hidden;
 
     // TEMP: Just for dev sake
-    &:nth-child(even) {
-      background: #DDD;
-    }
+    // &:nth-child(even) {
+    //   background-color: transparentize(red, 0.95);
+    // }
 
     .sides {
       @include outer-container;
@@ -19,7 +27,7 @@
 
     .story-title {
       font-family: $font-sans-bold;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       margin: 0;
       text-align: center;
       text-transform: uppercase;
@@ -27,9 +35,31 @@
 
     .story-text {
       font-family: $font-sans;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       margin: 0;
       text-align: center;
+    }
+
+    .picture {
+      max-width: 100%;
+    }
+
+    .button {
+      background: $yellow;
+      border: 0;
+      cursor: pointer;
+      display: block;
+      font-family: $font-sans-light;
+      font-size: 1.35rem;
+      margin: 1rem auto;
+      padding: 0.5rem 0;
+      text-align: center;
+      text-transform: uppercase;
+      width: 12rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

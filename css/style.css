@@ -3,13 +3,9 @@
  * Copyright 2012-2014 thoughtbot, inc.
  * MIT License */
 html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
 @font-face {
@@ -43,14 +39,119 @@ html {
 body {
   margin: 0; }
 
+a {
+  color: inherit;
+  text-decoration: none; }
+
+ul {
+  padding: 0; }
+  ul li {
+    list-style: none; }
+
 #header {
-  display: none; }
+  opacity: 0;
+  position: fixed;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  transition: 0.2s opacity ease-out, 0.2s -webkit-transform ease-out;
+  transition: 0.2s opacity ease-out, 0.2s transform ease-out;
+  width: 100%;
+  z-index: 1; }
+  #header.visible {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  #header #navigation {
+    background: black;
+    border-radius: 0.5rem;
+    color: white;
+    font-family: "josefin_sansregular", serif;
+    font-size: 1.25rem;
+    left: 50%;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    top: 50%; }
+    #header #navigation ul {
+      padding: 0;
+      margin: 0; }
+    #header #navigation li {
+      display: block;
+      float: left;
+      list-style: none;
+      padding: 0.5rem 0 0.5rem 1rem; }
+      #header #navigation li:not(:first-child) {
+        padding: 0.5rem 0; }
+        #header #navigation li:not(:first-child):before {
+          content: '\00b7';
+          display: block;
+          float: left;
+          margin: 0 1.5rem; }
+      #header #navigation li:last-child {
+        padding: 0.5rem 1rem 0.5rem 0; }
+    #header #navigation a:hover {
+      text-decoration: underline; }
+  #header .bride {
+    float: left;
+    width: 50%; }
+    #header .bride:before {
+      background: #FCEE21;
+      border-radius: 50%;
+      content: '';
+      display: block;
+      height: 10rem;
+      left: -3rem;
+      position: absolute;
+      top: -3rem;
+      width: 10rem; }
+    #header .bride .header-name {
+      background: rgba(255, 255, 255, 0.65);
+      border-bottom: 1px solid #FCEE21;
+      display: block;
+      font-family: "josefin_sansbold", serif;
+      font-size: 1.5rem;
+      padding: 1rem 0 1rem 10rem;
+      text-transform: uppercase; }
+    #header .bride .portrait {
+      display: block;
+      left: 0.5rem;
+      position: absolute; }
+  #header .groom {
+    width: 50%;
+    float: left; }
+    #header .groom:before {
+      background: #0F7EDC;
+      border-radius: 50%;
+      content: '';
+      display: block;
+      height: 10rem;
+      right: -3rem;
+      position: absolute;
+      top: -3rem;
+      width: 10rem; }
+    #header .groom .header-name {
+      background: rgba(255, 255, 255, 0.65);
+      border-bottom: 1px solid #0F7EDC;
+      display: block;
+      font-family: "josefin_sansbold", serif;
+      font-size: 1.5rem;
+      padding: 1rem 10rem 1rem 0;
+      text-transform: uppercase;
+      text-align: right; }
+    #header .groom .portrait {
+      position: absolute;
+      right: 0.5rem; }
+
+body {
+  background: url(/img/back.jpg);
+  background-position: top center;
+  background-repeat-x: no-repeat;
+  background-size: contain; }
 
 .main section {
-  height: 100vh;
-  position: relative; }
-  .main section:nth-child(even) {
-    background: #DDD; }
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden; }
   .main section .sides {
     max-width: 68em;
     margin-left: auto;
@@ -69,71 +170,471 @@ body {
       margin-right: 0; }
   .main section .story-title {
     font-family: "josefin_sansbold", serif;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin: 0;
     text-align: center;
     text-transform: uppercase; }
   .main section .story-text {
     font-family: "josefin_sansregular", serif;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin: 0;
     text-align: center; }
+  .main section .picture {
+    max-width: 100%; }
+  .main section .button {
+    background: #FCEE21;
+    border: 0;
+    cursor: pointer;
+    display: block;
+    font-family: "josefin_sanslight", serif;
+    font-size: 1.35rem;
+    margin: 1rem auto;
+    padding: 0.5rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 12rem; }
+    .main section .button:hover {
+      text-decoration: underline; }
 
-.intro .title {
-  font-family: "cheddar_jackregular", serif;
-  font-size: 10rem;
-  font-weight: normal;
-  margin: 4rem auto 0;
+#intro {
+  background: url(/img/uniform-bg.jpg); }
+  #intro:after {
+    background: url(/img/edge.svg);
+    background-position: top;
+    background-repeat-y: no-repeat;
+    content: '';
+    display: block;
+    height: 10rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+  #intro .title {
+    font-family: "cheddar_jackregular", serif;
+    font-size: 11rem;
+    font-weight: normal;
+    margin: 4rem auto 0;
+    text-align: center; }
+  #intro .subtitle {
+    font-family: "josefin_sanslight", serif;
+    font-size: 3rem;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase; }
+    #intro .subtitle:before {
+      background: black;
+      content: '';
+      display: block;
+      height: 0.25rem;
+      margin: 0 auto 2rem;
+      width: 5rem; }
+    #intro .subtitle:after {
+      background: #FCEE21;
+      content: '';
+      display: block;
+      height: 0.35rem;
+      margin: 0.5rem auto 0;
+      width: 20rem; }
+  #intro .wedding-date {
+    display: block;
+    font-family: "josefin_sansregular", serif;
+    font-size: 3.5rem;
+    text-align: center; }
+  #intro .intro-text {
+    display: block;
+    font-family: "josefin_sanslight", serif;
+    font-size: 1.5rem;
+    text-align: center; }
+  #intro .bride-pic {
+    position: absolute;
+    top: 25%;
+    left: -12rem;
+    width: 42.5%; }
+  #intro .groom-pic {
+    position: absolute;
+    top: 25%;
+    right: -12rem;
+    width: 42.5%; }
+
+#story-begins {
+  background: url(/img/uniform-bg.jpg); }
+  #story-begins:before {
+    background: url(/img/edge.svg);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    content: '';
+    display: block;
+    height: 13rem;
+    position: absolute;
+    top: 0;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    width: 100%; }
+  #story-begins:after {
+    background: url(/img/edge.svg);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    content: '';
+    display: block;
+    height: 13rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+  #story-begins .story-text {
+    font-family: "josefin_sanslight", serif;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center; }
+    #story-begins .story-text .highlight {
+      background: #0F7EDC;
+      display: block;
+      color: white;
+      font-size: 1.15rem;
+      margin: 0.25rem auto;
+      padding: 0.25rem 0;
+      text-transform: uppercase;
+      width: 15rem; }
+
+#we-meet {
+  background: url(/img/ceet.png);
+  background-position: center;
+  background-repeat: no-repeat; }
+  #we-meet .sides {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center; }
+    #we-meet .sides .bride {
+      width: 40%;
+      margin-right: 10%; }
+      #we-meet .sides .bride .picture {
+        margin-top: 1rem; }
+    #we-meet .sides .groom {
+      width: 50%; }
+      #we-meet .sides .groom .picture {
+        margin-top: 4rem; }
+
+#family .sides {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
   text-align: center; }
+  #family .sides .bride {
+    width: 40%;
+    margin-right: 20%; }
+  #family .sides .groom {
+    width: 40%; }
+    #family .sides .groom .picture {
+      margin: 3rem 0 1rem; }
 
-.intro .subtitle {
+#music {
+  background: url(/img/yellow-submarine.png); }
+  #music .sides {
+    left: 50%;
+    position: absolute;
+    top: 80%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center; }
+    #music .sides .bride {
+      width: 40%;
+      margin-right: 20%; }
+    #music .sides .groom {
+      width: 40%; }
+      #music .sides .groom .story-text {
+        margin: 4rem 0 0; }
+
+#feathers-and-smiles .sides {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center; }
+  #feathers-and-smiles .sides .bride {
+    width: 40%;
+    margin-right: 20%; }
+    #feathers-and-smiles .sides .bride .picture {
+      margin: 1rem 0 0; }
+  #feathers-and-smiles .sides .groom {
+    width: 40%; }
+    #feathers-and-smiles .sides .groom .picture {
+      margin: 3rem 0 0; }
+
+#jackets-and-wings .sides {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center; }
+  #jackets-and-wings .sides .bride {
+    width: 40%;
+    margin-right: 20%; }
+    #jackets-and-wings .sides .bride .picture {
+      margin: 1rem 0 0; }
+  #jackets-and-wings .sides .groom {
+    width: 40%; }
+    #jackets-and-wings .sides .groom .picture {
+      margin: 3rem 0 0; }
+
+#sleeping-and-coding .sides {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center; }
+  #sleeping-and-coding .sides .bride {
+    width: 40%;
+    margin-right: 20%; }
+    #sleeping-and-coding .sides .bride .picture {
+      margin: 4rem 0 0; }
+  #sleeping-and-coding .sides .groom {
+    width: 40%; }
+
+#sleeping-and-coding:after {
+  background: url(/img/code-flies.png);
+  background-repeat: no-repeat;
+  content: '';
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  width: 50%;
+  z-index: -1; }
+
+#bath-and-talk .sides {
+  left: 50%;
+  position: absolute;
+  top: 30%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center; }
+  #bath-and-talk .sides .bride {
+    width: 40%;
+    margin-right: 20%; }
+    #bath-and-talk .sides .bride .picture {
+      margin: 1rem 0 0; }
+    #bath-and-talk .sides .bride .story-title {
+      margin: 0.75rem 0 0; }
+  #bath-and-talk .sides .groom {
+    width: 40%; }
+    #bath-and-talk .sides .groom .picture {
+      margin: 6rem 0 0; }
+    #bath-and-talk .sides .groom .story-title {
+      margin: 2rem 0 0; }
+
+#singing-and-squash .sides {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center; }
+  #singing-and-squash .sides .bride {
+    width: 40%;
+    margin-right: 20%; }
+  #singing-and-squash .sides .groom {
+    width: 40%; }
+    #singing-and-squash .sides .groom .picture {
+      margin: 4rem 0 0; }
+    #singing-and-squash .sides .groom .story-text {
+      margin: 3rem 0 0; }
+
+#mirrors .sides {
+  left: 50%;
+  position: absolute;
+  top: 30%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center; }
+  #mirrors .sides .bride {
+    width: 40%;
+    margin-right: 20%; }
+    #mirrors .sides .bride .picture {
+      margin: 1rem 0; }
+  #mirrors .sides .groom {
+    width: 40%; }
+    #mirrors .sides .groom .picture {
+      margin: 3rem 0 3.5rem; }
+
+#beers .content {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+#beers .picture {
+  display: block;
+  margin: 1rem auto; }
+
+#story-ends .couple-names {
   font-family: "josefin_sanslight", serif;
-  font-size: 3rem;
-  margin: 0 auto;
+  font-size: 3.5rem;
   text-align: center;
   text-transform: uppercase; }
-  .intro .subtitle:before {
+  #story-ends .couple-names:after {
     background: black;
     content: '';
     display: block;
     height: 0.25rem;
-    margin: 0 auto 2rem;
+    margin: 1rem auto;
     width: 5rem; }
-  .intro .subtitle:after {
+
+#story-ends .now {
+  font-family: "josefin_sansbold", serif;
+  font-size: 1.75rem;
+  text-align: center;
+  text-transform: uppercase; }
+
+#story-ends .couple-nicknames {
+  font-family: "cheddar_jackregular", serif;
+  font-size: 11rem;
+  text-align: center; }
+  #story-ends .couple-nicknames:after {
     background: #FCEE21;
     content: '';
     display: block;
     height: 0.35rem;
-    margin: 0.5rem auto 0;
-    width: 20rem; }
+    margin: 0 auto 1rem;
+    width: 11rem; }
 
-.intro .wedding-date {
+#story-ends .story-text {
+  max-width: 30rem;
+  margin: 0 auto; }
+
+#the-wedding .title {
+  font-family: "cheddar_jackregular", serif;
+  font-weight: normal;
+  font-size: 11rem;
+  margin: 0;
+  text-align: center; }
+  #the-wedding .title:after {
+    background: black;
+    content: '';
+    display: block;
+    height: 0.25rem;
+    margin: 0 auto;
+    width: 5rem; }
+
+#the-wedding .wedding-date {
   display: block;
   font-family: "josefin_sansregular", serif;
-  font-size: 3.25rem;
+  font-size: 3.5rem;
+  margin: 3rem 0;
+  text-align: center;
+  text-transform: uppercase; }
+  #the-wedding .wedding-date .hour {
+    display: block;
+    font-family: "josefin_sanslight", serif; }
+    #the-wedding .wedding-date .hour:before {
+      background: #FCEE21;
+      content: '';
+      display: block;
+      height: 0.35rem;
+      margin: 1rem auto;
+      width: 30rem; }
+
+#the-wedding .place .restaurant {
+  font-family: "josefin_sanslight", serif;
+  font-size: 3.5rem;
+  margin: 10rem 0 0;
+  text-align: center;
+  text-transform: uppercase; }
+  #the-wedding .place .restaurant .highlight {
+    font-family: "josefin_sansregular", serif; }
+
+#the-wedding .place .address {
+  font-family: "josefin_sanslight", serif;
+  font-size: 2.5rem;
+  margin: 0;
   text-align: center; }
 
-.intro .intro-text {
+#the-wedding .place .recommendations {
+  text-align: center;
+  font-family: "josefin_sanslight", serif;
+  font-size: 2.5rem;
+  margin: 10rem 0; }
+
+#rsvp .title {
+  font-family: "cheddar_jackregular", serif;
+  font-weight: normal;
+  font-size: 11rem;
+  margin: 0;
+  text-align: center; }
+  #rsvp .title:after {
+    background: black;
+    content: '';
+    display: block;
+    height: 0.25rem;
+    margin: 0 auto;
+    width: 5rem; }
+
+#rsvp .subtitle {
   display: block;
   font-family: "josefin_sanslight", serif;
-  font-size: 1.35rem;
-  text-align: center; }
-
-.story-begins .story-text {
-  font-family: "josefin_sanslight", serif;
-  font-size: 1.5rem;
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
-  .story-begins .story-text .highlight {
-    background: #0F7EDC;
+  font-weight: normal;
+  font-size: 3.5rem;
+  line-height: 0.75;
+  margin: 3rem 0;
+  text-align: center;
+  text-transform: uppercase; }
+  #rsvp .subtitle .highlight {
     display: block;
-    color: white;
-    font-size: 1.15rem;
-    margin: 0.25rem auto;
-    padding: 0.25rem 0;
-    text-transform: uppercase;
-    width: 15rem; }
+    font-family: "josefin_sansregular", serif;
+    font-size: 3rem; }
+    #rsvp .subtitle .highlight:before {
+      background: #FCEE21;
+      content: '';
+      display: block;
+      height: 0.35rem;
+      margin: 1rem auto;
+      width: 30rem; }
+
+#rsvp #rsvp-form {
+  font-family: "josefin_sanslight", serif;
+  font-size: 1.25rem;
+  text-align: center;
+  text-transform: uppercase; }
+  #rsvp #rsvp-form .full-name {
+    display: block;
+    margin: 10rem 0 0; }
+    #rsvp #rsvp-form .full-name input {
+      display: block;
+      height: 2.25rem;
+      font-family: "josefin_sanslight", serif;
+      font-size: 1.5rem;
+      margin: 0.5rem auto 1rem;
+      text-align: center;
+      width: 30rem; }
+  #rsvp #rsvp-form .assistance {
+    display: inline-block; }
+  #rsvp #rsvp-form .will-assist,
+  #rsvp #rsvp-form .wont-assist {
+    display: block;
+    float: left;
+    margin: 2rem; }
+    #rsvp #rsvp-form .will-assist input,
+    #rsvp #rsvp-form .wont-assist input {
+      display: block;
+      margin: 0 auto; }
+  #rsvp #rsvp-form .button {
+    margin: 0 auto 10rem; }

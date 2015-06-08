@@ -1,0 +1,44 @@
+#story-ends {
+  .couple-names {
+    font-family: $font-sans-light;
+    font-size: 3.5rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:after {
+      background: black;
+      content: '';
+      display: block;
+      height: 0.25rem;
+      margin: 1rem auto;
+      width: 5rem;
+    }
+  }
+
+  .now {
+    font-family: $font-sans-bold;
+    font-size: 1.75rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .couple-nicknames {
+    font-family: $font-script;
+    font-size: 11rem;
+    text-align: center;
+
+    &:after {
+      background: $yellow;
+      content: '';
+      display: block;
+      height: 0.35rem;
+      margin: 0 auto 1rem;
+      width: 11rem;
+    }
+  }
+
+  .story-text {
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+}

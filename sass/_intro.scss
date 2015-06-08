@@ -1,7 +1,21 @@
-.intro {
+#intro {
+  background: url(/img/uniform-bg.jpg);
+
+  &:after {
+    background: url(/img/edge.svg);
+    background-position: top;
+    background-repeat-y: no-repeat;
+    content: '';
+    display: block;
+    height: 10rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
   .title {
     font-family: $font-script;
-    font-size: 10rem;
+    font-size: 11rem;
     font-weight: normal;
     margin: 4rem auto 0;
     text-align: center;
@@ -36,14 +50,28 @@
   .wedding-date {
     display: block;
     font-family: $font-sans;
-    font-size: 3.25rem;
+    font-size: 3.5rem;
     text-align: center;
   }
 
   .intro-text {
     display: block;
     font-family: $font-sans-light;
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     text-align: center;
+  }
+
+  .bride-pic {
+    position: absolute;
+    top: 25%;
+    left: -12rem;
+    width: 42.5%;
+  }
+
+  .groom-pic {
+    position: absolute;
+    top: 25%;
+    right: -12rem;
+    width: 42.5%;
   }
 }

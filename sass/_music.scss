@@ -1,0 +1,25 @@
+#music {
+  background: url(/img/yellow-submarine.png);
+
+  .sides {
+    left: 50%;
+    position: absolute;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+
+    .bride {
+      width: 40%;
+      margin-right: 20%;
+    }
+
+    .groom {
+      width: 40%;
+
+      .story-text {
+        margin: 4rem 0 0;
+      }
+    }
+  }
+}

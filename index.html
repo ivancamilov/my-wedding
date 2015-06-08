@@ -8,30 +8,36 @@
 <body>
   <header id="header">
     <div class="bride">
-      Mafe
+      <img src="/img/mafe-header.png" class="portrait" />
+      <span class="header-name">
+        Mafe
+      </span>
     </div>
 
     <nav id="navigation">
       <ul>
         <li>
-          La historia
+          <a data-scroll href="#story-begins">La historia</a>
         </li>
         <li>
-          La boda
+          <a data-scroll href="#the-wedding">La boda</a>
         </li>
         <li>
-          La asistencia
+          <a data-scroll href="#rsvp">La asistencia</a>
         </li>
       </ul>
     </nav>
 
     <div class="groom">
-      Ivan
+      <img src="/img/ivan-header.png" class="portrait" />
+      <span class="header-name">
+        Ivan
+      </span>
     </div>
   </header>
 
   <main class="main">
-    <section class="intro">
+    <section id="intro">
       <h1 class="title">
         Mafe & Ivancho
       </h1>
@@ -45,15 +51,19 @@
       <p class="intro-text">
         Y queremos que sigas siendo<br>parte de nuestra historia<br>&hellip;
       </p>
+
+      <img src="/img/mafe-intro.png" class="bride-pic" />
+
+      <img src="/img/ivan-intro.png" class="groom-pic " />
     </section>
 
-    <section class="story-begins">
+    <section id="story-begins">
       <p class="story-text">
         Para los que se la saben, para los que aún no la conocen y para aquellos que la quieren repetir: <span class="highlight">Esta es la historia.</span>
       </p>
     </section>
 
-    <section class="we-meet">
+    <section id="we-meet">
       <div class="sides">
         <div class="bride">
           <h2 class="story-title">
@@ -63,6 +73,8 @@
           <p class="story-text">
             con 24 años había logrado entrar a trabajar a uno de los medios escritos más conocidos de Colombia.
           </p>
+
+          <img class="picture" src="/img/ink.svg" />
         </div>
 
         <div class="groom">
@@ -73,19 +85,25 @@
           <p class="story-text">
             a los 19 años entró a realizar sus prácticas a uno de los medios escritos más conocidos de Colombia.
           </p>
+
+          <img class="picture" src="/img/screen.svg" />
         </div>
       </div>
     </section>
 
-    <section class="family">
+    <section id="family">
       <div class="sides">
         <div class="bride">
+          <img class="picture" src="/img/mafe-family.png"/>
+
           <p class="story-text">
             Había recobrado la armonía con su familia, alejada por unos años, refundida entre sus deseos de volar.
           </p>
         </div>
 
         <div class="groom">
+          <img class="picture" src="/img/ivan-family.png"/>
+
           <p class="story-text">
             Vivía con su mamá, los dos andaban y descubrían nuevos paisajes alrededor del continente americano. La armonía los acompañaba.
           </p>
@@ -93,7 +111,7 @@
       </div>
     </section>
 
-    <section class="music">
+    <section id="music">
       <div class="sides">
         <div class="bride">
           <p class="story-text">
@@ -109,7 +127,7 @@
       </div>
     </section>
 
-    <section class="feathers-and-smiles">
+    <section id="feathers-and-smiles">
       <div class="sides">
         <div class="bride">
           <p class="story-text">
@@ -119,28 +137,35 @@
           <h2 class="story-title">
             Tenía ronchas blancas.
           </h2>
+
+          <img class="picture" src="/img/rash.svg" />
         </div>
 
         <div class="groom">
           <h2 class="story-title">
             Siempre con una sonrisa,
           </h2>
+
           <p class="story-text">
             brillaba Iván dispuesto a ayudar.
           </p>
+
+          <img class="picture" src="/img/smile.svg" />
         </div>
       </div>
     </section>
 
-    <section class="jackets-and-wings">
+    <section id="jackets-and-wings">
       <div class="sides">
         <div class="bride">
+          <img class="picture" src="/img/jackets.png" />
           <p class="story-text">
             Las grandes chaquetas que usaba tapaban su nueva piel, que ahora se extendía por todo su cuerpo, excepto su cara que estaba libre de aquellas ronchas blancuzcas. Cómo se pudo percatar de unas ronchas blanquecinas en su piel blanca y reluciente como la porcelana aún es un misterio para la ciencia.
           </p>
         </div>
 
         <div class="groom">
+          <img class="picture" src="/img/feathers.png" />
           <p class="story-text">
             Las grandes chaquetas lo ataban, así que jamás las usaba. Tampoco sacos o ruanas, con sus plumas amarillas era suficiente.
           </p>
@@ -148,23 +173,27 @@
       </div>
     </section>
 
-    <section class="sleeping-and-coding">
+    <section id="sleeping-and-coding">
       <div class="sides">
         <div class="bride">
+          <img src="/img/bed.png" class="picture" />
+
           <p class="story-text">
             Una mañana se despertó sumergida entre plumas blancas. Iba a gritar, pero de su boca solo salió un cacareo. Buscó sus brazos, pero se dio cuenta de que habían sido reemplazados por alas&hellip; unas alas blancas, brillantes y suaves. Pensó que era un sueño y se arrepintió un poco de su obsesión kafkiana.
           </p>
         </div>
 
         <div class="groom">
+          <img src="/img/coffee.png" class="picture" />
+
           <p class="story-text">
-            Así es: tenía alas en lugar de manos, pero él no se daba cuenta. Nunca habían representado un impedimento para "echar" código. Sus amigos también ignoraban el asunto de las alas &ldash;pero no podían ignorar el golpe de ala.
+            Así es: tenía alas en lugar de manos, pero él no se daba cuenta. Nunca habían representado un impedimento para "echar" código. Sus amigos también ignoraban el asunto de las alas &mdash;pero no podían ignorar el golpe de ala.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="bath-and-talk">
+    <section id="bath-and-talk">
       <div class="sides">
         <div class="bride">
           <p class="story-text">
@@ -174,6 +203,8 @@
           <h2 class="story-title">
             Tan caliente como para pelar gallinas.
           </h2>
+
+          <img src="/img/boiling-pot.svg" class="picture" />
         </div>
 
         <div class="groom">
@@ -184,19 +215,25 @@
           <p class="story-text">
             No fue difícil aprender humanés.
           </p>
+
+          <img src="/img/languages.svg" class="picture" />
         </div>
       </div>
     </section>
 
-    <section class="singing-and-squash">
+    <section id="singing-and-squash">
       <div class="sides">
         <div class="bride">
+          <img src="/img/singing.png" class="picture" />
+
           <p class="story-text">
             Siguió trabajando en el periódico. Nadie se percató de su apariencia, pero lo cierto es que nadie entendía su lenguaje gallinés.
           </p>
         </div>
 
         <div class="groom">
+          <img src="/img/squash.png" class="picture" />
+
           <p class="story-text">
             Jugaba squash, salía con amigos, tomaba cerveza, whiskey (la marca olvidada, probablemente por tomar tanto whiskey)&hellip; todo con sus amigos humanos.
           </p>
@@ -204,26 +241,141 @@
       </div>
     </section>
 
-    <section class="mirrors">
+    <section id="mirrors">
       <div class="sides">
         <div class="bride">
-          <p class="intro-text">
+          <img src="/img/mirror-hen.png" class="picture" />
+
+          <p class="story-text">
             Cuando se miró al espejo la situación era peor de lo que pensó: era una gallina. Lo dedujo por su nuevo pico&hellip; y por sus avanzados estudios en taxonomía avícola.
           </p>
+
         </div>
 
         <div class="groom">
-          <p class="intro-text">
+
+          <img src="/img/mirror-chicken.png" class="picture" />
+
+          <p class="story-text">
             Siempre que se miraba al espejo y se veía como un pollo amarillo, pensaba que era producto de miles de páginas leídas de Stephen King.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="jump-catch">
+    <section id="jump-catch">
+      <!-- TODO: This! -->
+    </section>
 
+    <section id="beers">
+      <div class="content">
+        <img src="/img/beers.svg" class="picture" />
+
+        <h2 class="story-title">
+          Se fueron a tomar cerveza.
+        </h2>
+      </div>
+    </section>
+
+    <section id="story-ends">
+      <div class="couple-names">
+        Mafe & Ivancho
+      </div>
+
+      <div class="now">
+        Ahora
+      </div>
+
+      <div class="couple-nicknames">
+        Gallinita & Pollito
+      </div>
+
+      <div class="story-text">
+        Ebrios se fueron a la copa del árbol, se lanzaron al tiempo y con sus 4 alas lograron volar. Jamás quisieron bajar, andan por el cielo con sus días musicales.
+      </div>
+
+      <img src="/img/flying-couple.svg" />
+    </section>
+
+    <section id="the-wedding">
+      <h1 class="title">
+        La boda
+      </h1>
+
+      <time class="wedding-date">
+        12 de Septiembre de 2015
+        <span class="hour">
+          A las 2:00 pm
+        </span>
+      </time>
+
+      <div class="place">
+        <div class="restaurant">
+          Restaurante
+          <span class="highlight">
+            El Esturión
+          </span>
+        </div>
+
+        <div class="address">
+          Calle 44 No. 58 &ndash; 06 La Esmeralda, Bogotá
+        </div>
+
+        <a class="button" href="#">
+          Ver el mapa
+        </a>
+
+        <ul class="recommendations">
+          <li>
+            Traje Coctel
+          </li>
+          <li>
+            Lluvia de Sobres
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="rsvp">
+      <h1 class="title">
+        La asistencia
+      </h1>
+
+      <h2 class="subtitle">
+        Formulario de
+        <span class="highlight">
+          Confirmación
+        </span>
+      </h2>
+
+      <form id="rsvp-form">
+        <label for="full-name" class="full-name">
+          Nombre Completo
+          <input type="text" id="full-name" name="full-name" />
+        </label>
+
+        <div class="assistance">
+          <label for="will-assist" class="will-assist">
+            Sí<br />asistiré
+            <input type="radio" name="assist" id="will-assist" />
+          </label>
+
+          <label for="wont-assist" class="wont-assist">
+            No<br />asistiré
+            <input type="radio" name="assist" id="wont-assist" />
+          </label>
+        </div>
+
+        <input type="submit" value="Confirmar" class="button"/>
+      </form>
     </section>
   </main>
 
+  <footer id="footer">
+    <img src="/img/foot-chicken-hen.svg" class="picture" />
+  </footer>
+
+  <script src="/bower_components/smooth-scroll/src/js/smooth-scroll.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

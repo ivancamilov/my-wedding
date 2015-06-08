@@ -1,4 +1,31 @@
-.story-begins {
+#story-begins {
+  background: url(/img/uniform-bg.jpg);
+
+  &:before {
+    background: url(/img/edge.svg);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    content: '';
+    display: block;
+    height: 13rem;
+    position: absolute;
+    top: 0;
+    transform: rotate(180deg);
+    width: 100%;
+  }
+
+  &:after {
+    background: url(/img/edge.svg);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    content: '';
+    display: block;
+    height: 13rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
   .story-text {
     font-family: $font-sans-light;
     font-size: 1.5rem;

@@ -1,0 +1,27 @@
+#feathers-and-smiles {
+  .sides {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+
+    .bride {
+      width: 40%;
+      margin-right: 20%;
+
+      .picture {
+        margin: 1rem 0 0;
+      }
+    }
+
+    .groom {
+      width: 40%;
+
+      .picture {
+        margin: 3rem 0 0;
+      }
+    }
+  }
+}
