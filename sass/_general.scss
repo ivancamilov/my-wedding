@@ -23,6 +23,7 @@ body {
 
     .bride, .groom {
       @include span-columns(6);
+      padding: 1rem;
     }
 
     .story-title {
