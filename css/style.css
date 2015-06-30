@@ -36,6 +36,12 @@ html {
   font-weight: normal;
   font-style: normal; }
 
+[class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor; }
+
 body {
   margin: 0; }
 
@@ -64,6 +70,22 @@ ul {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
+  #header #navigation-toggle {
+    background: black;
+    border-radius: 0.25rem;
+    color: white;
+    display: none;
+    left: 50%;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: "josefin_sansregular", serif;
+    text-transform: uppercase; }
+    @media screen and (max-width: 56.25em) {
+      #header #navigation-toggle {
+        display: block; } }
   #header #navigation {
     background: black;
     border-radius: 0.5rem;
@@ -75,14 +97,34 @@ ul {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     top: 50%; }
+    @media screen and (max-width: 56.25em) {
+      #header #navigation {
+        text-align: center;
+        min-width: 25rem;
+        width: 60%;
+        top: auto;
+        bottom: -100%;
+        opacity: 0;
+        transition: 0.2s opacity ease-out; }
+        #header #navigation.active {
+          opacity: 1; } }
+    @media screen and (max-width: 37.5em) {
+      #header #navigation {
+        min-width: 0;
+        width: 40%;
+        bottom: auto;
+        top: 7.5rem; } }
     #header #navigation ul {
       padding: 0;
       margin: 0; }
     #header #navigation li {
-      display: block;
-      float: left;
+      display: inline-block;
       list-style: none;
       padding: 0.5rem 0 0.5rem 1rem; }
+      @media screen and (max-width: 37.5em) {
+        #header #navigation li {
+          display: block;
+          padding: 0.75rem !important; } }
       #header #navigation li:not(:first-child) {
         padding: 0.5rem 0; }
         #header #navigation li:not(:first-child):before {
@@ -90,6 +132,9 @@ ul {
           display: block;
           float: left;
           margin: 0 1.5rem; }
+          @media screen and (max-width: 37.5em) {
+            #header #navigation li:not(:first-child):before {
+              display: none; } }
       #header #navigation li:last-child {
         padding: 0.5rem 1rem 0.5rem 0; }
     #header #navigation a:hover {
@@ -107,6 +152,11 @@ ul {
       position: absolute;
       top: -3rem;
       width: 10rem; }
+      @media screen and (max-width: 37.5em) {
+        #header .bride:before {
+          left: -4rem;
+          height: 9rem;
+          width: 9rem; } }
     #header .bride .header-name {
       background: rgba(255, 255, 255, 0.65);
       border-bottom: 1px solid #FCEE21;
@@ -115,10 +165,17 @@ ul {
       font-size: 1.5rem;
       padding: 1rem 0 1rem 10rem;
       text-transform: uppercase; }
+      @media screen and (max-width: 37.5em) {
+        #header .bride .header-name {
+          text-indent: 100%; } }
     #header .bride .portrait {
       display: block;
       left: 0.5rem;
       position: absolute; }
+      @media screen and (max-width: 37.5em) {
+        #header .bride .portrait {
+          width: 5rem;
+          left: 0; } }
   #header .groom {
     width: 50%;
     float: left; }
@@ -132,6 +189,11 @@ ul {
       position: absolute;
       top: -3rem;
       width: 10rem; }
+      @media screen and (max-width: 37.5em) {
+        #header .groom:before {
+          right: -4rem;
+          height: 9rem;
+          width: 9rem; } }
     #header .groom .header-name {
       background: rgba(255, 255, 255, 0.65);
       border-bottom: 1px solid #0F7EDC;
@@ -141,9 +203,16 @@ ul {
       padding: 1rem 10rem 1rem 0;
       text-transform: uppercase;
       text-align: right; }
+      @media screen and (max-width: 37.5em) {
+        #header .groom .header-name {
+          text-indent: 100%; } }
     #header .groom .portrait {
       position: absolute;
       right: 0.5rem; }
+      @media screen and (max-width: 37.5em) {
+        #header .groom .portrait {
+          width: 5rem;
+          right: 0; } }
 
 body {
   background: url(../img/back.jpg);
@@ -223,8 +292,12 @@ body {
     font-family: "cheddar_jackregular", serif;
     font-size: 11rem;
     font-weight: normal;
+    line-height: 1;
     margin: 4rem auto 0;
     text-align: center; }
+    @media screen and (max-width: 48em) {
+      #intro .title {
+        margin: 10rem auto 0; } }
   #intro .subtitle {
     font-family: "josefin_sanslight", serif;
     font-size: 3rem;
@@ -260,11 +333,19 @@ body {
     top: 25%;
     left: -12rem;
     width: 42.5%; }
+    @media screen and (max-width: 48em) {
+      #intro .bride-pic {
+        left: -8rem;
+        top: 30%; } }
   #intro .groom-pic {
     position: absolute;
     top: 25%;
     right: -12rem;
     width: 42.5%; }
+    @media screen and (max-width: 48em) {
+      #intro .groom-pic {
+        right: -8rem;
+        top: 30%; } }
 
 #story-begins {
   background: url(../img/uniform-bg.jpg);
@@ -403,6 +484,7 @@ body {
   #story-ends .couple-names {
     font-family: "josefin_sanslight", serif;
     font-size: 3.5rem;
+    line-height: 1;
     text-align: center;
     text-transform: uppercase; }
     #story-ends .couple-names:after {
@@ -420,7 +502,8 @@ body {
   #story-ends .couple-nicknames {
     font-family: "cheddar_jackregular", serif;
     font-size: 11rem;
-    text-align: center; }
+    text-align: center;
+    line-height: 1; }
     #story-ends .couple-nicknames:after {
       background: #FCEE21;
       content: '';

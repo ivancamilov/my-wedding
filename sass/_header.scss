@@ -11,6 +11,24 @@
     transform: translate3d(0, 0, 0);
   }
 
+  #navigation-toggle {
+    background: black;
+    border-radius: 0.25rem;
+    color: white;
+    display: none;
+    left: 50%;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: $font-sans;
+    text-transform: uppercase;
+
+    @include media($tablet) {
+      display: block;
+    }
+  }
+
   #navigation {
     background: black;
     border-radius: 0.5rem;
@@ -22,16 +40,41 @@
     transform: translate(-50%, -50%);
     top: 50%;
 
+    @include media($tablet) {
+      text-align: center;
+      min-width: 25rem;
+      width: 60%;
+      top: auto;
+      bottom: -100%;
+      opacity: 0;
+      transition: 0.2s opacity ease-out;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    @include media($mobile) {
+      min-width: 0;
+      width: 40%;
+      bottom: auto;
+      top: 7.5rem;
+    }
+
     ul {
       padding: 0;
       margin: 0;
     }
 
     li {
-      display: block;
-      float: left;
+      display: inline-block;
       list-style: none;
       padding: 0.5rem 0 0.5rem 1rem;
+
+      @include media($mobile) {
+        display: block;
+        padding: 0.75rem !important;
+      }
 
       &:not(:first-child) {
         padding: 0.5rem 0;
@@ -41,6 +84,10 @@
           display: block;
           float: left;
           margin: 0 1.5rem;
+
+          @include media($mobile) {
+            display: none;
+          }
         }
       }
 
@@ -70,6 +117,12 @@
       position: absolute;
       top: -3rem;
       width: 10rem;
+
+      @include media($mobile) {
+        left: -4rem;
+        height: 9rem;
+        width: 9rem;
+      }
     }
 
     .header-name {
@@ -80,12 +133,21 @@
       font-size: 1.5rem;
       padding: 1rem 0 1rem 10rem;
       text-transform: uppercase;
+
+      @include media($mobile) {
+        text-indent: 100%;
+      }
     }
 
     .portrait {
       display: block;
       left: 0.5rem;
       position: absolute;
+
+      @include media($mobile) {
+        width: 5rem;
+        left: 0;
+      }
     }
   }
 
@@ -103,6 +165,12 @@
       position: absolute;
       top: -3rem;
       width: 10rem;
+
+      @include media($mobile) {
+        right: -4rem;
+        height: 9rem;
+        width: 9rem;
+      }
     }
 
     .header-name {
@@ -114,11 +182,20 @@
       padding: 1rem 10rem 1rem 0;
       text-transform: uppercase;
       text-align: right;
+
+      @include media($mobile) {
+        text-indent: 100%;
+      }
     }
 
     .portrait {
       position: absolute;
       right: 0.5rem;
+
+      @include media($mobile) {
+        width: 5rem;
+        right: 0;
+      }
     }
   }
 }
