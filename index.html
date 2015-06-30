@@ -6,6 +6,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
+
+  <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+  <symbol id="icon-menu" viewBox="0 0 1024 1024">
+    <title>menu</title>
+    <path class="path1" d="M64 192h896v192h-896zM64 448h896v192h-896zM64 704h896v192h-896z"></path>
+  </symbol>
+  <symbol id="icon-facebook" viewBox="0 0 1024 1024">
+    <title>facebook</title>
+    <path class="path1" d="M575.87 1024h-191.87v-512h-128v-176.45l128-0.058-0.208-103.952c0-143.952 39.034-231.54 208.598-231.54h141.176v176.484h-88.23c-66.032 0-69.206 24.656-69.206 70.684l-0.262 88.324h158.69l-18.704 176.45-139.854 0.058-0.13 512z"></path>
+  </symbol>
+  </defs>
+  </svg>
+
   <header id="header">
     <div class="bride">
       <img src="img/mafe-header.png" class="portrait" />
@@ -13,6 +27,11 @@
         Mafe
       </span>
     </div>
+
+    <a href="#" id="navigation-toggle">
+      <svg class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+      Menú
+    </a>
 
     <nav id="navigation">
       <ul>

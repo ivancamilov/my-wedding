@@ -4,6 +4,7 @@
   .couple-names {
     font-family: $font-sans-light;
     font-size: 3.5rem;
+    line-height: 1;
     text-align: center;
     text-transform: uppercase;
 
@@ -28,6 +29,7 @@
     font-family: $font-script;
     font-size: 11rem;
     text-align: center;
+    line-height: 1;
 
     &:after {
       background: $yellow;
