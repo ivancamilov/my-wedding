@@ -135,7 +135,7 @@
       text-transform: uppercase;
 
       @include media($mobile) {
-        opacity: 0;
+        text-indent: 100%;
       }
     }
 
@@ -184,7 +184,7 @@
       text-align: right;
 
       @include media($mobile) {
-        opacity: 0;
+        text-indent: 100%;
       }
     }
 
