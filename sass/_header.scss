@@ -47,7 +47,7 @@
       top: auto;
       bottom: -100%;
       opacity: 0;
-      transition: 0.2s opacity ease-out;
+      transition: 0.8s opacity ease-out, 0.2s transform ease-out;
 
       &.active {
         opacity: 1;
@@ -59,6 +59,12 @@
       width: 40%;
       bottom: auto;
       top: 7.5rem;
+      transform: translate(-50%, -100rem);
+
+      &.active {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
     }
 
     ul {

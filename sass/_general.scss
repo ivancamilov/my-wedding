@@ -30,10 +30,28 @@ body {
     .bride {
       width: 40%;
       margin-right: 20%;
+
+      @include media($mobile) {
+        width: 95% !important;
+
+        .story-title,
+        .story-text {
+          text-align: left;
+        }
+      }
     }
 
     .groom {
       width: 40%;
+
+      @include media($mobile) {
+        width: 95% !important;
+
+        .story-title,
+        .story-text {
+          text-align: right;
+        }
+      }
     }
 
     .story-title {

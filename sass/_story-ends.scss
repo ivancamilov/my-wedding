@@ -28,8 +28,13 @@
   .couple-nicknames {
     font-family: $font-script;
     font-size: 11rem;
+    font-weight: normal;
     text-align: center;
     line-height: 1;
+
+    @include media($mobile) {
+      font-size: 7rem;
+    }
 
     &:after {
       background: $yellow;
@@ -39,11 +44,71 @@
       margin: 0 auto 1rem;
       width: 11rem;
     }
+
+    .char11 {
+      vertical-align: top;
+      margin-left: -0.09em;
+    }
+
+    .char13 {
+      vertical-align: top;
+      margin-left: -0.029em;
+    }
+
+    .char14 {
+      vertical-align: top;
+      margin-left: -0.029em;
+    }
+
+    .char15 {
+      vertical-align: top;
+      margin-left: -0.024em;
+    }
+
+    .char17 {
+      vertical-align: top;
+      margin-left: -0.052em;
+    }
+
+    .char18 {
+      vertical-align: top;
+      margin-left: -0.067em;
+    }
+
+    .char23 {
+      vertical-align: top;
+      margin-left: -0.114em;
+    }
+
+    .char25 {
+      vertical-align: top;
+      margin-left: -0.033em;
+    }
+
+    .char26 {
+      vertical-align: top;
+      margin-left: -0.029em;
+    }
+
+    .char27 {
+      vertical-align: top;
+      margin-left: -0.057em;
+    }
+
+    .char28 {
+      vertical-align: top;
+      margin-left: -0.071em;
+    }
   }
 
   .story-text {
     max-width: 30rem;
     margin: 0 auto;
+
+    @include media($mobile) {
+      font-size: 1.25rem;
+      padding: 0 1rem;
+    }
   }
 
   .picture {

@@ -1,0 +1,26 @@
+{
+  "name": "iki/zepto-replace-jquery",
+  "description" : "`window.jQuery=Zepto` stub for compiling together with your vendor libraries.",
+  "type": "component",
+  "keywords": [
+    "JavaScript"
+  ],
+  "homepage": "http://zeptojs.com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Fuchs",
+      "homepage": "https://github.com/madrobby"
+    }
+  ],
+  "require": {
+      "robloach/component-installer": "*"
+  },
+  "extra": {
+    "component": {
+      "scripts": [
+        "zepto-replace-jquery.js"
+      ]
+    }
+  }
+}

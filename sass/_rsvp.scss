@@ -6,6 +6,11 @@
     margin: 0;
     text-align: center;
 
+    @include media($mobile) {
+      font-size: 7rem;
+      line-height: 0.85;
+    }
+
     &:after {
       background: black;
       content: '';
@@ -13,6 +18,30 @@
       height: 0.25rem;
       margin: 0 auto;
       width: 5rem;
+    }
+
+    .char11 {
+      vertical-align: top;
+      margin-left: -0.095em;
+    }
+
+    .char17 {
+      vertical-align: top;
+      margin-left: -0.038em;
+    }
+
+    .char18 {
+      vertical-align: top;
+      margin-left: -0.071em;
+    }
+
+    .char19 {
+      vertical-align: top;
+      margin-left: -0.005em;
+    }
+
+    .char20 {
+      vertical-align: top;
     }
   }
 
@@ -26,10 +55,18 @@
     text-align: center;
     text-transform: uppercase;
 
+    @include media($mobile) {
+      font-size: 2rem;
+    }
+
     .highlight {
       display: block;
       font-family: $font-sans;
       font-size: 3rem;
+
+      @include media($mobile) {
+        font-size: 2.25rem;
+      }
 
       &:before {
         background: $yellow;
@@ -38,6 +75,10 @@
         height: 0.35rem;
         margin: 1rem auto;
         width: 30rem;
+
+        @include media($mobile) {
+          width: 15rem;
+        }
       }
     }
   }
@@ -52,6 +93,11 @@
       display: block;
       margin: 10rem 0 0;
 
+      @include media($mobile) {
+        margin: 5rem 0 0;
+        padding: 0 1rem;
+      }
+
       input {
         display: block;
         height: 2.25rem;
@@ -60,6 +106,10 @@
         margin: 0.5rem auto 1rem;
         text-align: center;
         width: 30rem;
+
+        @include media($mobile) {
+          width: 100%;
+        }
       }
     }
 
