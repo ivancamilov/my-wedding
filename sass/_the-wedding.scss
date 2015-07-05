@@ -7,6 +7,10 @@
     margin: 0;
     text-align: center;
 
+    @include media($mobile) {
+      font-size: 7rem;
+    }
+
     &:after {
       background: black;
       content: '';
@@ -14,6 +18,26 @@
       height: 0.25rem;
       margin: 0 auto;
       width: 5rem;
+    }
+
+    .char11 {
+      vertical-align: top;
+      margin-left: -0.105em;
+    }
+
+    .char14 {
+      vertical-align: top;
+      margin-left: -0.014em;
+    }
+
+    .char15 {
+      vertical-align: top;
+      margin-left: -0.052em;
+    }
+
+    .char16 {
+      vertical-align: top;
+      margin-left: -0.038em;
     }
   }
 
@@ -24,6 +48,10 @@
     margin: 3rem 0;
     text-align: center;
     text-transform: uppercase;
+
+    @include media($mobile) {
+      font-size: 2rem;
+    }
 
     .hour {
       display: block;
@@ -36,6 +64,10 @@
         height: 0.35rem;
         margin: 1rem auto;
         width: 30rem;
+
+        @include media($mobile) {
+          width: 15rem;
+        }
       }
     }
   }
@@ -48,6 +80,10 @@
       text-align: center;
       text-transform: uppercase;
 
+      @include media($mobile) {
+        font-size: 2rem;
+      }
+
       .highlight {
         font-family: $font-sans;
       }
@@ -58,6 +94,10 @@
       font-size: 2.5rem;
       margin: 0;
       text-align: center;
+
+      @include media($mobile) {
+        font-size: 1.5rem;
+      }
     }
 
     .recommendations {

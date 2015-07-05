@@ -40,7 +40,7 @@ function toggleMenuButton(e) {
     e.preventDefault();
 }
 
-document.addEventListener("DOMContentLoaded", function(e) {
+$(document).ready(function() {
   // Initialize the code that evaluates wether we should
   // show the menu bar or not.
   window.addEventListener('scroll', onScroll, false);
@@ -58,4 +58,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
   // We should hide the menu when we click the nav links
   var navigation = document.getElementById('navigation');
   navigation.addEventListener('click', toggleMenuButton);
+
+  $('#intro .title').lettering();
+  $('.couple-nicknames').lettering();
+  $('#the-wedding .title').lettering();
+  $('#rsvp .title').lettering();
 });

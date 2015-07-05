@@ -17,6 +17,9 @@
     "tests"
   ],
   "dependencies": {
-    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#~5.3.7"
+    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#~5.3.7",
+    "zepto-replace-jquery": "~1.0.0",
+    "letteringjs": "~0.7.0",
+    "zepto": "~1.1.6"
   }
 }

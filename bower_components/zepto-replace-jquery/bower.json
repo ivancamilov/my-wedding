@@ -1,0 +1,8 @@
+{
+  "name": "zepto-replace-jquery",
+  "description" : "`window.jQuery=Zepto` stub for compiling together with your vendor libraries.",
+  "version"     : "1.0.0",
+  "main"        : "zepto-replace-jquery.js",
+  "dependencies": {
+  }
+}
