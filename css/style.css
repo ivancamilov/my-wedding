@@ -109,7 +109,7 @@ ul {
         transition: 0.8s opacity ease-out, 0.2s transform ease-out; }
         #header #navigation.active {
           opacity: 1; } }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #header #navigation {
         min-width: 0;
         width: 40%;
@@ -128,7 +128,7 @@ ul {
       display: inline-block;
       list-style: none;
       padding: 0.5rem 0 0.5rem 1rem; }
-      @media screen and (max-width: 37.5em) {
+      @media screen and (max-width: 36.25em) {
         #header #navigation li {
           display: block;
           padding: 0.75rem !important; } }
@@ -139,7 +139,7 @@ ul {
           display: block;
           float: left;
           margin: 0 1.5rem; }
-          @media screen and (max-width: 37.5em) {
+          @media screen and (max-width: 36.25em) {
             #header #navigation li:not(:first-child):before {
               display: none; } }
       #header #navigation li:last-child {
@@ -159,7 +159,7 @@ ul {
       position: absolute;
       top: -3rem;
       width: 10rem; }
-      @media screen and (max-width: 37.5em) {
+      @media screen and (max-width: 36.25em) {
         #header .bride:before {
           left: -4rem;
           height: 9rem;
@@ -172,14 +172,14 @@ ul {
       font-size: 1.5rem;
       padding: 1rem 0 1rem 10rem;
       text-transform: uppercase; }
-      @media screen and (max-width: 37.5em) {
+      @media screen and (max-width: 36.25em) {
         #header .bride .header-name {
           text-indent: 100%; } }
     #header .bride .portrait {
       display: block;
       left: 0.5rem;
       position: absolute; }
-      @media screen and (max-width: 37.5em) {
+      @media screen and (max-width: 36.25em) {
         #header .bride .portrait {
           width: 5rem;
           left: 0; } }
@@ -196,7 +196,7 @@ ul {
       position: absolute;
       top: -3rem;
       width: 10rem; }
-      @media screen and (max-width: 37.5em) {
+      @media screen and (max-width: 36.25em) {
         #header .groom:before {
           right: -4rem;
           height: 9rem;
@@ -210,13 +210,13 @@ ul {
       padding: 1rem 10rem 1rem 0;
       text-transform: uppercase;
       text-align: right; }
-      @media screen and (max-width: 37.5em) {
+      @media screen and (max-width: 36.25em) {
         #header .groom .header-name {
           text-indent: 100%; } }
     #header .groom .portrait {
       position: absolute;
       right: 0.5rem; }
-      @media screen and (max-width: 37.5em) {
+      @media screen and (max-width: 36.25em) {
         #header .groom .portrait {
           width: 5rem;
           right: 0; } }
@@ -252,7 +252,7 @@ body {
   .main section .bride {
     width: 40%;
     margin-right: 20%; }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       .main section .bride {
         width: 95% !important; }
         .main section .bride .story-title,
@@ -260,7 +260,7 @@ body {
           text-align: left; } }
   .main section .groom {
     width: 40%; }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       .main section .groom {
         width: 95% !important; }
         .main section .groom .story-title,
@@ -307,7 +307,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%; }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #intro:after {
         background-size: 100%;
         height: 3rem; } }
@@ -321,7 +321,7 @@ body {
     @media screen and (max-width: 48em) {
       #intro .title {
         margin: 10rem auto 0; } }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #intro .title {
         font-size: 7rem;
         margin: 2rem auto 0;
@@ -356,7 +356,7 @@ body {
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase; }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #intro .subtitle {
         font-size: 2rem; } }
     #intro .subtitle:before {
@@ -373,7 +373,7 @@ body {
       height: 0.35rem;
       margin: 0.5rem auto 0;
       width: 20rem; }
-      @media screen and (max-width: 37.5em) {
+      @media screen and (max-width: 36.25em) {
         #intro .subtitle:after {
           width: 10rem; } }
   #intro .wedding-date {
@@ -381,7 +381,7 @@ body {
     font-family: "josefin_sansregular", serif;
     font-size: 3.5rem;
     text-align: center; }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #intro .wedding-date {
         font-size: 2.25rem; } }
   #intro .intro-text {
@@ -389,7 +389,7 @@ body {
     font-family: "josefin_sanslight", serif;
     font-size: 1.5rem;
     text-align: center; }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #intro .intro-text {
         font-size: 1.25rem; } }
   #intro .bride-pic {
@@ -401,7 +401,7 @@ body {
       #intro .bride-pic {
         left: -8rem;
         top: 30%; } }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #intro .bride-pic {
         left: -4rem;
         top: 20%; } }
@@ -414,7 +414,7 @@ body {
       #intro .groom-pic {
         right: -8rem;
         top: 30%; } }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #intro .groom-pic {
         right: -4rem;
         top: 20%; } }
@@ -434,7 +434,7 @@ body {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
     width: 100%; }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #story-begins:before {
         background-size: cover;
         height: 6rem; } }
@@ -448,7 +448,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%; }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #story-begins:after {
         background-size: cover;
         height: 6rem; } }
@@ -585,7 +585,7 @@ body {
     font-weight: normal;
     text-align: center;
     line-height: 1; }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #story-ends .couple-nicknames {
         font-size: 7rem; } }
     #story-ends .couple-nicknames:after {
@@ -631,7 +631,7 @@ body {
   #story-ends .story-text {
     max-width: 30rem;
     margin: 0 auto; }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #story-ends .story-text {
         font-size: 1.25rem;
         padding: 0 1rem; } }
@@ -644,7 +644,7 @@ body {
   font-size: 11rem;
   margin: 0;
   text-align: center; }
-  @media screen and (max-width: 37.5em) {
+  @media screen and (max-width: 36.25em) {
     #the-wedding .title {
       font-size: 7rem; } }
   #the-wedding .title:after {
@@ -674,7 +674,7 @@ body {
   margin: 3rem 0;
   text-align: center;
   text-transform: uppercase; }
-  @media screen and (max-width: 37.5em) {
+  @media screen and (max-width: 36.25em) {
     #the-wedding .wedding-date {
       font-size: 2rem; } }
   #the-wedding .wedding-date .hour {
@@ -687,7 +687,7 @@ body {
       height: 0.35rem;
       margin: 1rem auto;
       width: 30rem; }
-      @media screen and (max-width: 37.5em) {
+      @media screen and (max-width: 36.25em) {
         #the-wedding .wedding-date .hour:before {
           width: 15rem; } }
 
@@ -697,7 +697,7 @@ body {
   margin: 10rem 0 0;
   text-align: center;
   text-transform: uppercase; }
-  @media screen and (max-width: 37.5em) {
+  @media screen and (max-width: 36.25em) {
     #the-wedding .place .restaurant {
       font-size: 2rem; } }
   #the-wedding .place .restaurant .highlight {
@@ -708,7 +708,7 @@ body {
   font-size: 2.5rem;
   margin: 0;
   text-align: center; }
-  @media screen and (max-width: 37.5em) {
+  @media screen and (max-width: 36.25em) {
     #the-wedding .place .address {
       font-size: 1.5rem; } }
 
@@ -724,7 +724,7 @@ body {
   font-size: 11rem;
   margin: 0;
   text-align: center; }
-  @media screen and (max-width: 37.5em) {
+  @media screen and (max-width: 36.25em) {
     #rsvp .title {
       font-size: 7rem;
       line-height: 0.85; } }
@@ -759,14 +759,14 @@ body {
   margin: 3rem 0;
   text-align: center;
   text-transform: uppercase; }
-  @media screen and (max-width: 37.5em) {
+  @media screen and (max-width: 36.25em) {
     #rsvp .subtitle {
       font-size: 2rem; } }
   #rsvp .subtitle .highlight {
     display: block;
     font-family: "josefin_sansregular", serif;
     font-size: 3rem; }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #rsvp .subtitle .highlight {
         font-size: 2.25rem; } }
     #rsvp .subtitle .highlight:before {
@@ -776,7 +776,7 @@ body {
       height: 0.35rem;
       margin: 1rem auto;
       width: 30rem; }
-      @media screen and (max-width: 37.5em) {
+      @media screen and (max-width: 36.25em) {
         #rsvp .subtitle .highlight:before {
           width: 15rem; } }
 
@@ -788,7 +788,7 @@ body {
   #rsvp #rsvp-form .full-name {
     display: block;
     margin: 10rem 0 0; }
-    @media screen and (max-width: 37.5em) {
+    @media screen and (max-width: 36.25em) {
       #rsvp #rsvp-form .full-name {
         margin: 5rem 0 0;
         padding: 0 1rem; } }
@@ -800,7 +800,7 @@ body {
       margin: 0.5rem auto 1rem;
       text-align: center;
       width: 30rem; }
-      @media screen and (max-width: 37.5em) {
+      @media screen and (max-width: 36.25em) {
         #rsvp #rsvp-form .full-name input {
           width: 100%; } }
   #rsvp #rsvp-form .assistance {
