@@ -1,0 +1,19 @@
+#jump-catch {
+  .groom {
+    float: right;
+
+    &.below-tree {
+      margin-top: 20rem;
+    }
+
+    &.final {
+      margin-top: 30rem;
+    }
+  }
+
+  .bride {
+    &.warning {
+      margin-top: 5rem;
+    }
+  }
+}

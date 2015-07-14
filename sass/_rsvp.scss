@@ -1,4 +1,6 @@
 #rsvp {
+  padding-top: 4rem;
+
   .title {
     font-family: $font-script;
     font-weight: normal;
@@ -83,15 +85,54 @@
     }
   }
 
+  .story-text {
+    max-width: 30rem;
+    margin: 0 auto;
+    transition: opacity 0.2s ease-out, height 0.5s ease-out;
+
+    &.hidden {
+      opacity: 0;
+      height: 0;
+    }
+  }
+
+  .confirm {
+    width: 20rem;
+    background: $blue;
+    color: white;
+    opacity: 0;
+    height: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out;
+
+    &.visible {
+      opacity: 1;
+      height: auto;
+      pointer-events: auto;
+    }
+
+    .icon-facebook {
+      color: white;
+    }
+  }
+
   #rsvp-form {
     font-family: $font-sans-light;
     font-size: 1.25rem;
     text-align: center;
     text-transform: uppercase;
+    opacity: 0;
+    height: 0;
+    transition: 0.2s opacity ease-out, 0.5s height ease-out;
+
+    &.visible {
+      opacity: 1;
+      height: auto;
+    }
 
     .full-name {
       display: block;
-      margin: 10rem 0 0;
+      margin: 1rem 0 0;
 
       @include media($mobile) {
         margin: 5rem 0 0;
@@ -113,23 +154,8 @@
       }
     }
 
-    .assistance {
-      display: inline-block;
-    }
-
-    .will-assist,
-    .wont-assist {
-      display: block;
-      float: left;
-      margin: 2rem;
-
-      input {
-        display: block;
-        margin: 0 auto;
-      }
-    }
-
     .button {
+      -webkit-appearance: none;
       margin: 0 auto 10rem;
     }
   }

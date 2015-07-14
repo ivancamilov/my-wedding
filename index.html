@@ -24,7 +24,6 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-
   <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
   <symbol id="icon-menu" viewBox="0 0 1024 1024">
@@ -151,12 +150,16 @@
     <section id="music">
       <div class="sides">
         <div class="bride">
+          <img class="picture" src="img/submarine.png" />
+
           <p class="story-text">
             John, Paul, George y Ringo la acompañaban al andar, al escribir, al respirar. Aunque esta compañía se limitaba sólo a sus melódicas voces.
           </p>
         </div>
 
         <div class="groom">
+          <img class="picture" src="img/sleeping.png" />
+
           <p class="story-text">
             Con sus audífonos Iván iba a su primer trabajo. "Pareces Frankenstein", le decían, pues aunque no los tuviera en sus oídos propiamente, de sus pequeños "tornillos" en el cuello brotaba música: Oasis, Coldplay, AC/DC&hellip; todos acompañaban sus largas jornadas.
           </p>
@@ -301,7 +304,45 @@
     </section>
 
     <section id="jump-catch">
-      <!-- TODO: This! -->
+      <div class="sides">
+        <div class="bride">
+          <p class="story-text">
+            Aunque en películas, libros y dibujos animados sentenciaban que las gallinas jamás volarían, María pensó que quizás ella, por ser una gallina rara que antes había sido humana, lograría volar. Se subió a la copa de un árbol y se lanzó.
+          </p>
+        </div>
+
+        <div class="groom below-tree">
+          <p class="story-text">
+            Iván salió un día a pensar en la relatividad, el tiempo y esas cosas. Se quedó debajo de un árbol contemplando sus sueños y una remota posibilidad de volar. También pensando en que su desodorante no lograba quitar el golpe de ala del todo.
+          </p>
+        </div>
+
+        <div class="bride warning">
+          <h2 class="story-title">
+            Caía en picada. ¡Parecía el fin!
+          </h2>
+        </div>
+
+        <div class="groom">
+          <img src="img/flies.svg" class="picture" />
+
+          <p class="story-text">
+            Del cielo vio que caía una gallina gigante (no tanto). Qué raro, pensó.
+          </p>
+        </div>
+
+        <div class="bride">
+          <p class="story-text">
+            Cuando iba a chocar con el suelo unas alas amarillas la recibieron. Era un pollo gigante, más grande que ella, quién la sostuvo en sus brazos/alas. Unos grandes ojos negros la impactaron (Probablemente haya sido el susto de la caída, porque todos sabemos que los ojos negros no existen... o eso creía el pollo Iván). No hablaron. Ella lo conocía desde sus sueños.
+          </p>
+        </div>
+
+        <div class="groom final">
+          <p class="story-text">
+            Decidió recibirla en sus brazos. Se vio reflejado en sus ojos verdes y se percibió distinto, sintiendo por primera vez sus alas.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="beers">
@@ -385,25 +426,17 @@
         </span>
       </h2>
 
+      <p class="story-text" id="rsvp-messages">
+        Cargando...
+      </p>
+
+      <a href="#" class="confirm button" id="confirm-button">
+        <svg class="icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+        Confirmar asistencia
+      </a>
+
       <form id="rsvp-form">
-        <label for="full-name" class="full-name">
-          Nombre Completo
-          <input type="text" id="full-name" name="full-name" />
-        </label>
-
-        <div class="assistance">
-          <label for="will-assist" class="will-assist">
-            Sí<br />asistiré
-            <input type="radio" name="assist" id="will-assist" />
-          </label>
-
-          <label for="wont-assist" class="wont-assist">
-            No<br />asistiré
-            <input type="radio" name="assist" id="wont-assist" />
-          </label>
-        </div>
-
-        <input type="submit" value="Confirmar" class="button"/>
+        <input id="guest-confirm-button" type="submit" value="Confirmar" class="button"/>
       </form>
     </section>
   </main>
@@ -416,6 +449,7 @@
   <script src="bower_components/zepto/zepto.js"></script>
   <script src="bower_components/zepto-replace-jquery/zepto-replace-jquery.js"></script>
   <script src="bower_components/letteringjs/jquery.lettering.js"></script>
+  <script src="js/facebook-login.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
