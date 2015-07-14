@@ -1,10 +1,34 @@
 #music {
-  background: url(../img/yellow-submarine.png);
+  background: url(../img/musical-notes.png);
   background-size: cover;
+  background-repeat: no-repeat;
+  overflow: visible;
+
+  .sides {
+    position: initial;
+  }
+
+  .bride {
+    .picture {
+      width: auto;
+      max-width: none;
+      margin-left: -65rem;
+      margin-top: -25rem;
+
+      @include media($ipad-landscape) {
+        margin-left: -70rem;
+      }
+    }
+  }
 
   .groom {
     .story-text {
-      margin: 4rem 0 0;
+      margin: 30rem 0 0;
+    }
+
+    .picture {
+      position: absolute;
+      right: 0;
     }
   }
 }
