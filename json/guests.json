@@ -1,10 +1,12 @@
 {
   "guests":[
     {
-      "name": "Ivan Camilo Vásquez"
+      "name": "Ivan Camilo Vásquez",
+      "comingWith": [ "María Fernanda" ]
     },
     {
-      "name": "María Fernanda"
+      "name": "María Fernanda",
+      "comingWith": [ "Ivan Camilo Vásquez" ]
     }
   ]
 }
