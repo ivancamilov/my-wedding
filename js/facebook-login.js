@@ -137,7 +137,7 @@ function checkAndConfirmUser(theName) {
           userGuests += '<li>' + userGuestArray[i] + '</li>';
         }
 
-        showMessage('Ya has confirmado tu asistencia y la de tus invitados, ' + theName + '. Asistirás con: <ul>' + userGuests + '</ul>. <br><br> <small>Si deseas cambiar el estado de tu confirmación, por favor comunícate con Ivan o Mafe.</small>');
+        showMessage('Ya has confirmado tu asistencia, ' + theName + '. Asistirás con: <ul>' + userGuests + '</ul><small>Si deseas cambiar el estado de tu confirmación, por favor comunícate con Ivan o Mafe.</small>');
       }
       else {
         showMessage('Ya has confirmado tu asistencia, ' + theName + ' :).<br><br> <small>Si deseas cambiar el estado de tu confirmación, por favor comunícate con Ivan o Mafe.</small>');
@@ -147,8 +147,8 @@ function checkAndConfirmUser(theName) {
     error:    function(response) {
       if(response.status == 404) {
         // This is a new reservation!
-        guests = guestCount(theName);
-        if(guests > 0) {
+        guests = userGuestList(theName);
+        if(guests.length > 0) {
           // We make sure the form appears at the same time as the message:
           var listener = function(e) {
             rsvpMessages.removeEventListener('transitionend', listener);
@@ -258,13 +258,13 @@ function confirmUser(theName, theGuests) {
 
 // Shows the guests form (duh) showing as many fields
 // as guestCount indicates.
-function showGuestsForm(guestCount, name) {
+function showGuestsForm(guests, name) {
   rsvpForm.className = 'visible';
   rsvpForm.dataset.name = name;
 
   var submitButton = document.getElementById('guest-confirm-button');
 
-  for(var i = 0; i < guestCount; i++) {
+  for(var i = 0; i < guests.length; i++) {
     var label = document.createElement('label');
     label.className = 'full-name';
     label.setAttribute('form', 'full-name-guest-' + i);
@@ -274,6 +274,7 @@ function showGuestsForm(guestCount, name) {
     input.setAttribute('type', 'text');
     input.className = 'full-name';
     input.id = 'full-name-guest-' + i;
+    input.value = guests[i];
 
     label.appendChild(input);
     rsvpForm.insertBefore(label, submitButton);
