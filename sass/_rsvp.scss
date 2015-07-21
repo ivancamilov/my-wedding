@@ -96,6 +96,26 @@
     }
   }
 
+  // .error-messages {
+  //   background: red;
+  //   color: white;
+  //   border-radius: 5px;
+  //   padding: 0.5rem;
+  //   max-width: 30rem;
+  //   margin: 1rem auto;
+  //   text-align: center;
+  //   font-family: $font-sans;
+  //   font-size: 1.5rem;
+  //   opacity: 0;
+  //   height: 0;
+  //   transition: opacity 0.2s ease-out, height 0.5s ease-out;
+
+  //   &.visible {
+  //     opacity: 1;
+  //     height: auto;
+  //   }
+  // }
+
   .confirm {
     width: 20rem;
     background: $blue;

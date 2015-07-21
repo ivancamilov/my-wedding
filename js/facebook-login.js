@@ -10,7 +10,12 @@ confirmButton.addEventListener('click', loginToFacebook);
 
 var rsvpMessages = document.getElementById('rsvp-messages');
 
+var rsvpForm = document.getElementById('rsvp-form');
+rsvpForm.addEventListener('submit', submitGuestForm);
+
 var guestList;
+
+var SERVICEURL = 'http://wedding-reservation.herokuapp.com';
 
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
@@ -22,22 +27,7 @@ function statusChangeCallback(response) {
     // Logged into your app and Facebook.
     confirmButton.className = 'confirm button';
 
-    FB.api('/me', {fields: 'id,name,first_name'}, function(response) {
-      if(authorizedUser(response.name)) {
-        guests = guestCount(response.name);
-        if(guests > 0) {
-          showMessage('¡Puedes asistir con invitados, ' + response.first_name + '! Por favor, escribe los nombres abajo.');
-          showGuestsForm(guests);
-        }
-        else {
-          confirmUser(response.name);
-          showMessage('Gracias por confirmar tu asistencia, ' + response.first_name + '. ¡No olvides guardar la fecha en tu calendario!<br><br> <small>Si deseas cambiar el estado de tu confirmación, por favor comunícate con Ivan o Mafe.</small>');
-        }
-      }
-      else {
-        showMessage('Parece que no estás en la lista de invitados. Es posible que esto sea un error del desarrollador (es decir, Iván). El pobre muchacho anda distraído con su futura esposa y no da pie con bola, así que es mejor que te comuniques con Mafe o Iván para aclarar este impase.');
-      }
-    });
+    FB.api('/me', {fields: 'id,name,first_name'}, registerFacebookUser);
   }
   else if (response.status === 'not_authorized') {
     // The person is logged into Facebook, but not your app.
@@ -54,8 +44,8 @@ function statusChangeCallback(response) {
 
 window.fbAsyncInit = function() {
 FB.init({
-  //appId      : '1447839545539933', // LIVE APP
-  appId      : '1447844372206117', // TEST APP
+  appId      : '1447839545539933', // LIVE APP
+  //appId      : '1447844372206117', // TEST APP
   cookie     : true,
   xfbml      : true,
   version    : 'v2.4'
@@ -84,7 +74,7 @@ FB.init({
       });
     },
     error: function() {
-      // TODO: Handle this properly
+      // TODO Handle this properly
       alert('hubo un error :(');
     }
   });
@@ -114,10 +104,69 @@ function loginToFacebook(e) {
 
 function showMessage(message) {
   rsvpMessages.className = 'story-text hidden';
-  rsvpMessages.addEventListener('transitionend', function(e) {
-    rsvpMessages.removeEventListener('transitionend');
+
+  var listener = function(e) {
+    rsvpMessages.removeEventListener('transitionend', listener);
     rsvpMessages.innerHTML = message;
     rsvpMessages.className = 'story-text';
+  };
+
+  rsvpMessages.addEventListener('transitionend', listener);
+}
+
+// Handles Facebook's response.
+function registerFacebookUser(response) {
+  if(authorizedUser(response.name)) {
+    checkAndConfirmUser(response.name);
+  }
+  else {
+    showMessage('Parece que no estás en la lista de invitados. Es posible que esto sea un error del desarrollador (es decir, Iván). El pobre muchacho anda distraído con su futura esposa y no da pie con bola, así que es mejor que te comuniques con Mafe o Iván para aclarar este impase.');
+  }
+}
+
+function checkAndConfirmUser(theName) {
+  $.ajax({
+    url:      encodeURI(SERVICEURL + '/reservations/' + theName),
+    method:   'GET',
+    success:  function(response) {
+      if(response.data.guests.length > 0) {
+        var userGuestArray = response.data.guests;
+        var userGuests = '';
+
+        for(var i = 0; i < userGuestArray.length; i++) {
+          userGuests += '<li>' + userGuestArray[i] + '</li>';
+        }
+
+        showMessage('Ya has confirmado tu asistencia y la de tus invitados, ' + theName + '. Asistirás con: <ul>' + userGuests + '</ul>. <br><br> <small>Si deseas cambiar el estado de tu confirmación, por favor comunícate con Ivan o Mafe.</small>');
+      }
+      else {
+        showMessage('Ya has confirmado tu asistencia, ' + theName + ' :).<br><br> <small>Si deseas cambiar el estado de tu confirmación, por favor comunícate con Ivan o Mafe.</small>');
+      }
+      return;
+    },
+    error:    function(response) {
+      if(response.status == 404) {
+        // This is a new reservation!
+        guests = guestCount(theName);
+        if(guests > 0) {
+          // We make sure the form appears at the same time as the message:
+          var listener = function(e) {
+            rsvpMessages.removeEventListener('transitionend', listener);
+            showGuestsForm(guests, theName);
+          };
+
+          showMessage('¡Puedes asistir con invitados, ' + theName + '! Por favor, escribe los nombres abajo.');
+          rsvpMessages.addEventListener('transitionend', listener);
+        }
+        else {
+          confirmUser(theName);
+        }
+      }
+      else {
+        showMessage('ERROR!!!');
+        console.log(response);
+      }
+    }
   });
 }
 
@@ -137,22 +186,81 @@ function authorizedUser(name) {
 // Determines the number of guests someone is allowed
 // to bring.
 function guestCount(name) {
-  // TODO: calculate this!
+  for(var i = 0; i < guestList.length; i++) {
+    if(guestList[i].name == name) {
+      if(guestList[i].comingWith) {
+        return guestList[i].comingWith.length;
+      }
+      else {
+        return 0;
+      }
+    }
+  }
+
   return 0;
 }
 
+function userGuestList(name) {
+  for(var i = 0; i < guestList.length; i++) {
+    if(guestList[i].name == name) {
+      if(guestList[i].comingWith) {
+        return guestList[i].comingWith;
+      }
+      else {
+        return 0;
+      }
+    }
+  }
+}
+
 // Confirms the user has RSVPed yes.
-// It doesn't take into account duplicates,
-// so it's our job to handle this properly.
-function confirmUser(name) {
-  //TODO this!
+function confirmUser(theName, theGuests) {
+  if(!theGuests) {
+    theGuests = [];
+  }
+
+  var theData = {
+    'name': theName,
+    'date': (new Date()).toISOString(),
+    'guests': theGuests
+  };
+
+  $.ajax({
+    url:        SERVICEURL + '/reservations',
+    type:       'POST',
+    contentType: 'application/json',
+    dataType:   'json',
+    data:       JSON.stringify(theData),
+    success:    function(response) {
+      if(theGuests && theGuests.length > 0) {
+        var userGuestList = '';
+
+        for(var i = 0; i < theGuests.length; i++) {
+          userGuestList += theGuests[i];
+
+          if(i != (theGuests.length - 1)) {
+            userGuestList += ', ';
+          }
+        }
+
+        showMessage('Gracias por confirmar tu asistencia y la de tus invitados. ¡No olvides guardar la fecha en tu calendario!<br><br> <small>Si deseas cambiar el estado de tu confirmación, por favor comunícate con Ivan o Mafe.</small>');
+      }
+      else {
+        showMessage('Gracias por confirmar tu asistencia. ¡No olvides guardar la fecha en tu calendario!<br><br> <small>Si deseas cambiar el estado de tu confirmación, por favor comunícate con Ivan o Mafe.</small>');
+      }
+    },
+    error:      function(error) {
+      showMessage('error!!!!');
+      console.log(error);
+    }
+  });
 }
 
 // Shows the guests form (duh) showing as many fields
 // as guestCount indicates.
-function showGuestsForm(guestCount) {
-  rsvpForm = document.getElementById('rsvp-form');
+function showGuestsForm(guestCount, name) {
   rsvpForm.className = 'visible';
+  rsvpForm.dataset.name = name;
 
   var submitButton = document.getElementById('guest-confirm-button');
 
@@ -170,5 +278,59 @@ function showGuestsForm(guestCount) {
     label.appendChild(input);
     rsvpForm.insertBefore(label, submitButton);
   }
+}
 
+function hideGuestForm() {
+  rsvpForm.className = '';
+}
+
+function submitGuestForm(e) {
+  var mainName = rsvpForm.dataset.name;
+  var guests = rsvpForm.querySelectorAll('input.full-name');
+  var continueAnyway = false;
+
+  // First we need to check if any of the fields is empty
+  for(var i = 0; i < guests.length; i++) {
+    var name = guests[i].value;
+
+    if(guests[i].value.length == 0) {
+      if(!continueAnyway){
+        continueAnyway = window.confirm('No incluiste el nombre de uno de tus invitados. ¿Estás seguro de que deseas continuar?');
+
+        if(!continueAnyway) {
+          e.preventDefault();
+          return false;
+        }
+
+        break;
+      }
+    }
+  }
+
+  // If we continue, it means the user has filled all the inputs
+  // or she doesn't mind that one of the fields is empty
+
+  // Now, we need to get the entire guest array, including the current
+  // user
+  var guestArray = new Array();
+  guestArray.push(mainName);
+
+  for(var i = 0; i < guests.length; i++) {
+    var name = guests[i].value;
+    guestArray.push(name);
+  }
+
+  // Now we confirm all of the users
+  for(var i = 0; i < guestArray.length; i++) {
+    var me = guestArray[i];
+    // We need to clone the guest array to handle it properly
+    var myGuests = JSON.parse(JSON.stringify(guestArray));
+    myGuests.splice(i, 1);
+
+    confirmUser(me, myGuests);
+  }
+
+  hideGuestForm();
+  e.preventDefault();
+  return false;
 }
