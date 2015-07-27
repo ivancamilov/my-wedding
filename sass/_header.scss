@@ -4,7 +4,7 @@
   transform: translate3d(0, -100%, 0);
   transition: 0.2s opacity ease-out, 0.2s transform ease-out;
   width: 100%;
-  z-index: 1;
+  z-index: 3;
 
   &.visible {
     opacity: 1;
