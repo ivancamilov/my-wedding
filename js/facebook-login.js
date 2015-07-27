@@ -44,8 +44,8 @@ function statusChangeCallback(response) {
 
 window.fbAsyncInit = function() {
 FB.init({
-  //appId      : '1447839545539933', // LIVE APP
-  appId      : '1447844372206117', // TEST APP
+  appId      : '1447839545539933', // LIVE APP
+  //appId      : '1447844372206117', // TEST APP
   cookie     : true,
   xfbml      : true,
   version    : 'v2.4'
