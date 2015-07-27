@@ -1,19 +1,60 @@
 #jump-catch {
+  .tree {
+    position: absolute;
+    right: -12rem;
+    top: 25rem;
+  }
+
+  .jumping-hen {
+    position: absolute;
+    top: 25rem;
+    left: 20rem;
+
+    &.doing-jump {
+      animation: jumpOut 2000ms linear both;
+    }
+
+    &.falling-down {
+      position: fixed;
+      z-index: 1;
+      animation: jumpIn 2000ms linear both;
+    }
+
+    &.flying {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      animation: wobble 2000ms linear infinite both;
+    }
+
+    &.static {
+      position: absolute;
+      z-index: 1;
+      top: 70%;
+    }
+  }
+
   .groom {
     float: right;
 
     &.below-tree {
-      margin-top: 20rem;
+      margin-top: 40rem;
+      width: 50%;
     }
 
     &.final {
-      margin-top: 30rem;
+      margin-right: 1rem;
+      margin-bottom: 5rem;
     }
   }
 
   .bride {
     &.warning {
       margin-top: 5rem;
+    }
+
+    &.almost-at-bottom {
+      width: 45%;
     }
   }
 }
