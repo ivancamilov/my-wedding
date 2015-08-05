@@ -868,6 +868,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   overflow: visible; }
+  @media screen and (max-width: 36.25em) {
+    #music {
+      overflow: hidden; } }
   #music .sides {
     position: initial; }
   #music .bride .picture {
@@ -878,6 +881,9 @@ body {
     @media screen and (max-width: 64em) {
       #music .bride .picture {
         margin-left: -70rem; } }
+    @media screen and (max-width: 48em) {
+      #music .bride .picture {
+        margin-left: -75rem; } }
   #music .groom .story-text {
     margin: 30rem 0 0; }
   #music .groom .picture {
@@ -938,11 +944,17 @@ body {
   position: absolute;
   right: -12rem;
   top: 25rem; }
+  @media screen and (max-width: 68.75em) {
+    #jump-catch .tree {
+      display: none; } }
 
 #jump-catch .jumping-hen {
   position: absolute;
   top: 25rem;
   left: 20rem; }
+  @media screen and (max-width: 68.75em) {
+    #jump-catch .jumping-hen {
+      display: none; } }
   #jump-catch .jumping-hen.doing-jump {
     -webkit-animation: jumpOut 2000ms linear both;
     animation: jumpOut 2000ms linear both; }
@@ -964,6 +976,9 @@ body {
 
 #jump-catch .groom {
   float: right; }
+  @media screen and (max-width: 68.75em) {
+    #jump-catch .groom {
+      margin: inherit !important; } }
   #jump-catch .groom.below-tree {
     margin-top: 40rem;
     width: 50%; }

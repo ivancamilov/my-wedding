@@ -3,12 +3,20 @@
     position: absolute;
     right: -12rem;
     top: 25rem;
+
+    @include media($small-desktop) {
+      display: none;
+    }
   }
 
   .jumping-hen {
     position: absolute;
     top: 25rem;
     left: 20rem;
+
+    @include media($small-desktop) {
+      display: none;
+    }
 
     &.doing-jump {
       animation: jumpOut 2000ms linear both;
@@ -36,6 +44,10 @@
 
   .groom {
     float: right;
+
+    @include media($small-desktop) {
+      margin: inherit !important;
+    }
 
     &.below-tree {
       margin-top: 40rem;
