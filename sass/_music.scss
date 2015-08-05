@@ -4,6 +4,10 @@
   background-repeat: no-repeat;
   overflow: visible;
 
+  @include media($mobile) {
+    overflow: hidden;
+  }
+
   .sides {
     position: initial;
   }
@@ -17,6 +21,10 @@
 
       @include media($ipad-landscape) {
         margin-left: -70rem;
+      }
+
+      @include media($ipad-portrait) {
+        margin-left: -75rem;
       }
     }
   }
