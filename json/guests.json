@@ -315,6 +315,14 @@
     {
       "name": "Sandrita P Daza",
       "comingWith": [ ]
+    },
+    {
+      "name": "Liesel Moog",
+      "comingWith": [ "German Bustos" ]
+    },
+    {
+      "name": "German Bustos",
+      "comingWith": [ "Liesel Moog" ]
     }
   ]
 }
