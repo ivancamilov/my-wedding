@@ -593,7 +593,7 @@ ul {
           width: 5rem;
           right: 0; } }
 
-body {
+body:not(.songbook) {
   background: url(../img/back.jpg);
   background-position: top center;
   background-repeat-x: no-repeat;
@@ -1279,3 +1279,26 @@ body {
 
 #footer .picture {
   width: 100%; }
+
+body.songbook {
+  height: 100%; }
+  body.songbook .main {
+    height: 100%; }
+
+.songbook-message {
+  width: 100%;
+  padding: 0 1.5rem;
+  max-width: 40rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: "josefin_sanslight", serif;
+  font-size: 1.5rem;
+  text-align: center; }
+  .songbook-message .title {
+    font-family: "josefin_sansregular", serif;
+    font-size: 2rem; }
+  .songbook-message .button {
+    margin: 3rem auto 1rem !important; }

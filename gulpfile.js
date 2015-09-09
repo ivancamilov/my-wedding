@@ -34,6 +34,7 @@ gulp.task('watch', function() {
   gulp.watch('sass/*.scss', { interval: 500 }, ['sass']);
   gulp.watch('css/**/*.css', { interval: 500 }, ['reload']);
   gulp.watch('js/**/*.js', { interval: 500 }, ['reload']);
+  gulp.watch('canciones/*.html', { interval: 500 }, ['reload']);
   gulp.watch('*.html', { interval: 500 }, ['reload']);
 });
 
