@@ -1,0 +1,29 @@
+body.songbook {
+  height: 100%;
+
+  .main {
+    height: 100%;
+  }
+}
+
+.songbook-message {
+  width: 100%;
+  padding: 0 1.5rem;
+  max-width: 40rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: $font-sans-light;
+  font-size: 1.5rem;
+  text-align: center;
+
+  .title {
+    font-family: $font-sans;
+    font-size: 2rem;
+  }
+
+  .button {
+    margin: 3rem auto 1rem !important;
+  }
+}
